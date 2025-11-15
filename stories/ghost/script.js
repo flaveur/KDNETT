@@ -1,35 +1,31 @@
-// Parallax effect for moon
-document.addEventListener('mousemove', (e) => {
-    const moon = document.querySelector('.moon');
-    if (moon) {
-        const x = (window.innerWidth - e.pageX * 2) / 100;
-        const y = (window.innerHeight - e.pageY * 2) / 100;
-        moon.style.transform = `translate(${x}px, ${y}px)`;
-    }
-});
+// Jumpscare Ghost - triggers at 50% scroll
+let jumpscareTriggered = false;
 
-// Random ghost appearance
-const floatingGhost = document.querySelector('.floating-ghost');
-setInterval(() => {
-    if (floatingGhost) {
-        const randomBottom = Math.random() * 50 + 10;
-        const randomRight = Math.random() * 30 + 5;
-        floatingGhost.style.bottom = randomBottom + '%';
-        floatingGhost.style.right = randomRight + '%';
-    }
-}, 8000);
-
-// Spooky hover effects on legend cards
-const legendCards = document.querySelectorAll('.legend-card');
-legendCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.boxShadow = '0 20px 50px rgba(83, 52, 131, 0.7), 0 0 30px rgba(255, 215, 0, 0.3)';
-    });
+window.addEventListener('scroll', () => {
+    if (jumpscareTriggered) return;
     
-    card.addEventListener('mouseleave', function() {
-        this.style.boxShadow = '0 15px 40px rgba(83, 52, 131, 0.5)';
-    });
+    const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    
+    // Trigger jumpscare when user scrolls to approximately middle of page
+    if (scrollPercent >= 45 && scrollPercent <= 55) {
+        jumpscareTriggered = true;
+        triggerJumpscare();
+    }
 });
+
+function triggerJumpscare() {
+    const jumpscareGhost = document.querySelector('.jumpscare-ghost');
+    jumpscareGhost.classList.add('active');
+    
+    // Optional: Play a "Boo!" sound effect (uncomment if you add audio)
+    // const audio = new Audio('boo-sound.mp3');
+    // audio.play();
+    
+    // Remove after animation completes
+    setTimeout(() => {
+        jumpscareGhost.classList.remove('active');
+    }, 800);
+}
 
 // Fade in animation on scroll
 const observerOptions = {
@@ -52,7 +48,19 @@ sightings.forEach(sighting => {
     fadeInObserver.observe(sighting);
 });
 
-// Eerie sound effect on hover (visual feedback)
+// Enhanced hover effects on legend cards
+const legendCards = document.querySelectorAll('.legend-card');
+legendCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Timeline hover effects
 const timelineItems = document.querySelectorAll('.timeline-item');
 timelineItems.forEach(item => {
     item.addEventListener('mouseenter', function() {
@@ -65,7 +73,7 @@ timelineItems.forEach(item => {
     });
 });
 
-// Mysterious glow effect on highlights
+// Highlight click effect
 const highlights = document.querySelectorAll('.highlight');
 highlights.forEach(highlight => {
     highlight.addEventListener('click', function() {
@@ -81,7 +89,7 @@ const style = document.createElement('style');
 style.textContent = `
     @keyframes pulse {
         0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+        50% { transform: scale(1.15); box-shadow: 0 0 20px rgba(14, 201, 166, 0.6); }
     }
 `;
 document.head.appendChild(style);

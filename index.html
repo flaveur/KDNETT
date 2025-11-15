@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gruppe JSU – Nyheter</title>
+  <title>Gruppe JSU – Nyheter og Reportasjer</title>
+  <meta name="description" content="Nyheter, reportasjer og artikler fra Gruppe JSU - Vi dekker temaer som teknologi, kultur, samfunn og mer." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,47 +12,104 @@
     <!-- Header -->
     <header class="site-header">
       <h1>GRUPPE JSU</h1>
+      <p class="tagline">Nyheter · Reportasjer · Analyse</p>
     </header>
 
     <main class="main-content">
-      <!-- Hoved -->
-      <article class="story big">
-        <a href="stories/skjermtid/skjermtid.html" class="story-link">
-          <div class="hero-image"></div>
-          <h2>Skjermtid</h2>
-        </a>
-      </article>
+      <!-- Featured Story -->
+      <section class="featured-section">
+        <h2 class="section-title">Hovedsak</h2>
+        <article class="story featured">
+          <a href="stories/skjermtid/skjermtid.html" class="story-link">
+            <div class="hero-image">
+              <span class="story-badge">Featured</span>
+            </div>
+            <div class="story-content">
+              <h2>Skjermtid: En generasjons digitale dilemma</h2>
+              <p class="excerpt">
+                I en tid hvor skjermer omgir oss overalt, stiller vi spørsmål ved hva konstant tilkobling gjør med oss. 
+                En dyptgående reportasje om digital helse, avhengighet og balanse i hverdagen.
+              </p>
+              <span class="read-more">Les hele saken →</span>
+            </div>
+          </a>
+        </article>
+      </section>
 
-      <div class="stories-grid">
-        <article class="story small">
-          <a href="stories/ghost/index.html" class="story-link">
-            <div class="thumb"></div>
-            <h3>Ghost Hunting</h3>
-          </a>
-        </article>
+      <!-- Stories Grid -->
+      <section class="stories-section">
+        <h2 class="section-title">Flere Reportasjer</h2>
+        <div class="stories-grid">
+          <article class="story card">
+            <a href="stories/oya/oya.html" class="story-link">
+              <div class="thumb"></div>
+              <div class="card-content">
+                <h3>Øyafestival Boikott 2025</h3>
+                <p class="card-excerpt">
+                  Etikk, eierskap og kulturens ansvar. En analyse av boikottdebatten som satte søkelys på festivalens verdier.
+                </p>
+                <div class="card-meta">
+                  <span class="category">Kultur</span>
+                  <span class="read-time">8 min lesing</span>
+                </div>
+              </div>
+            </a>
+          </article>
 
-        <article class="story small">
-          <a href="stories/oya/oya.html" class="story-link">
-            <div class="thumb"></div>
-            <h3>Øyafestival Boikott – Etikk, eierskap og kulturens ansvar</h3>
-          </a>
-        </article>
+          <article class="story card">
+            <a href="stories/ghost/ghost.html" class="story-link">
+              <div class="thumb"></div>
+              <div class="card-content">
+                <h3>Ghost Hunting: På jakt etter det overnaturlige</h3>
+                <p class="card-excerpt">
+                  En reise inn i spøkelsesjakters verden. Hva driver folk til å lete etter det ukjente?
+                </p>
+                <div class="card-meta">
+                  <span class="category">Mysterier</span>
+                  <span class="read-time">6 min lesing</span>
+                </div>
+              </div>
+            </a>
+          </article>
 
-        <article class="story small">
-          <a href="stories/storm/index.html" class="story-link">
-            <div class="thumb"></div>
-            <h3>Stormen – Amy</h3>
-          </a>
-        </article>
-         <article class="story small">
-          <a href="stories/ai/ai.html" class="story-link">
-            <div class="thumb"></div>
-            <h3>AI</h3>
-          </a>
-        </article>
-      </div>
+          <article class="story card">
+            <a href="stories/storm/index.html" class="story-link">
+              <div class="thumb"></div>
+              <div class="card-content">
+                <h3>Stormen Amy: Naturens kraft</h3>
+                <p class="card-excerpt">
+                  En reportasje om ekstremvær og hvordan lokalsamfunn håndterer naturens krefter i en tid med klimaendringer.
+                </p>
+                <div class="card-meta">
+                  <span class="category">Klima</span>
+                  <span class="read-time">5 min lesing</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="story card">
+            <a href="stories/ai/ai.html" class="story-link">
+              <div class="thumb"></div>
+              <div class="card-content">
+                <h3>AI: Fremtidens teknologi i dag</h3>
+                <p class="card-excerpt">
+                  Kunstig intelligens former vår hverdag på måter vi knapt forstår. En guide til AI i 2025.
+                </p>
+                <div class="card-meta">
+                  <span class="category">Teknologi</span>
+                  <span class="read-time">7 min lesing</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
     </main>
   </div>
+
+  <!-- Mode Toggle Button -->
+  <button id="mode-toggle" class="mode-toggle">🌙 Mørk Modus</button>
 
   <script src="script.js"></script>
 </body>
