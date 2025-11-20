@@ -12,26 +12,33 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = scrolled + '%';
 });
 
-// ========== DARK MODE TOGGLE ==========
+// ========== DARK MODE TOGGLE (icon-only) ==========
 const toggleBtn = document.getElementById('mode-toggle');
-
-// Sjekk om dark mode er lagret i localStorage
-if (localStorage.getItem('darkMode') === 'enabled') {
-  document.body.classList.add('dark-mode');
-  toggleBtn.textContent = '☀️ Lys Modus';
-}
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  
-  if (document.body.classList.contains('dark-mode')) {
-    toggleBtn.textContent = '☀️ Lys Modus';
-    localStorage.setItem('darkMode', 'enabled');
-  } else {
-    toggleBtn.textContent = '🌙 Mørk Modus';
-    localStorage.setItem('darkMode', 'disabled');
+if (toggleBtn) {
+  const ICONS = { dark: '🌙', light: '☀️' };
+  // Helper to set button state (icon + accessibility)
+  function setToggleState(isDark) {
+    toggleBtn.textContent = isDark ? ICONS.light : ICONS.dark; // show icon for the opposite action
+    toggleBtn.setAttribute('aria-label', isDark ? 'Bytt til lys modus' : 'Bytt til mørk modus');
+    toggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
   }
-});
+
+  // Initialize from storage
+  const stored = localStorage.getItem('darkMode');
+  if (stored === 'enabled') {
+    document.body.classList.add('dark-mode');
+    setToggleState(true);
+  } else {
+    setToggleState(false);
+  }
+
+  // Click toggles class and stores preference; visible label remains an icon only
+  toggleBtn.addEventListener('click', () => {
+    const isNowDark = document.body.classList.toggle('dark-mode');
+    setToggleState(isNowDark);
+    localStorage.setItem('darkMode', isNowDark ? 'enabled' : 'disabled');
+  });
+}
 
 // ========== FADE IN ANIMATIONS ON SCROLL ==========
 const observerOptions = {

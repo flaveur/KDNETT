@@ -34,29 +34,29 @@ body {
 
 /* === LAYOUT === */
 .container {
-  max-width: 1200px;
-  margin: 40px auto;
+  max-width: 850px; /* narrower, more readable */
+  margin: 36px auto;
   background: var(--white);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 28px 26px; /* simpler padding */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
 /* Header */
 .site-header {
-  text-align:center;
-  margin-bottom:40px;
-  padding-bottom:30px;
-  border-bottom: 3px solid var(--green);
+  text-align: left;
+  margin-bottom:28px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   position: relative;
 }
 
 .site-header h1 {
-  font-size:42px;
+  font-size:28px;
   color:var(--green);
-  letter-spacing:2px;
+  letter-spacing:1px;
   font-weight:700;
-  margin-bottom: 10px;
+  margin: 0;
   text-transform: uppercase;
 }
 
@@ -300,37 +300,31 @@ body {
 
 /* ========== MODE TOGGLE BUTTON ========== */
 .mode-toggle {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+  position: absolute; /* placed inside header */
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--green);
   color: white;
   border: none;
-  padding: 15px 20px;
-  border-radius: 50px;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 4px 16px rgba(10, 61, 59, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 
-.mode-toggle:hover {
-  background: #06423f;
-  transform: scale(1.05);
-}
+.mode-toggle:hover { transform: translateY(-2px); }
 
-.dark-mode .mode-toggle {
-  background: #a7e1d4;
-  color: #0a3d3b;
-}
+.dark-mode .mode-toggle { background: #a7e1d4; color: #0a3d3b; }
 
-.dark-mode .mode-toggle:hover {
-  background: #c9f7ed;
-}
+/* Make the site obviously clickable: clear CTA for featured story */
+.story.featured .read-more { padding: 12px 22px; border-radius: 8px; }
 
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {

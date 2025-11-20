@@ -355,6 +355,16 @@ p, h2, blockquote, figure {
   position: relative;
 }
 
+/* Enable smooth snap scrolling and align items to center */
+.timeline {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline-item {
+  scroll-snap-align: center;
+}
+
 .timeline::before {
   content: '';
   position: absolute;
@@ -415,6 +425,110 @@ p, h2, blockquote, figure {
 .timeline-item.active p {
   color: var(--green);
   font-weight: 600;
+}
+
+/* Enhanced interactive timeline styles */
+.timeline-controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.timeline-control-btn {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.06);
+  color: var(--green);
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.timeline-control-btn:active { transform: scale(0.98); }
+
+.timeline-item { transition: transform 0.25s cubic-bezier(.2,.9,.3,1), opacity 0.25s; }
+.timeline-item:hover { transform: translateY(-6px) scale(1.03); z-index: 3; }
+.timeline-item:focus { outline: 3px solid rgba(10,61,59,0.08); transform: translateY(-6px) scale(1.03); }
+
+.timeline-item.centered { transform: scale(1.08) translateY(-8px); }
+
+/* Pulse animation for the active dot */
+.timeline-item.centered .timeline-dot,
+.timeline-item.active .timeline-dot {
+  animation: pulse-dot 1.6s infinite cubic-bezier(.2,.9,.3,1);
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(10, 61, 59, 0.18); }
+  50% { box-shadow: 0 0 0 8px rgba(10, 61, 59, 0.06); }
+  100% { box-shadow: 0 0 0 0 rgba(10, 61, 59, 0.0); }
+}
+
+/* Hover preview tooltip */
+.timeline-tooltip {
+  position: fixed;
+  max-width: 360px;
+  background: var(--white);
+  color: #111;
+  padding: 12px 14px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  pointer-events: none;
+  z-index: 20000;
+  transform-origin: top left;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+}
+
+.timeline-tooltip.visible { opacity: 1; transform: translateY(0) scale(1); }
+
+/* Reduce motion support: remove non-essential animations */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item,
+  .timeline-item:hover,
+  .timeline-item.centered,
+  .timeline-dot,
+  .timeline-tooltip,
+  .reading-progress,
+  .info-box,
+  .info-box-content {
+    transition: none !important;
+    animation: none !important;
+  }
+  .timeline { scroll-snap-type: none; }
+}
+
+/* Class-based disable for effects (developer can add `no-effects` to body) */
+.no-effects .timeline { scroll-snap-type: none; }
+.no-effects .timeline-item,
+.no-effects .timeline-dot,
+.no-effects .timeline-tooltip,
+.no-effects .info-box { transition: none !important; animation: none !important; }
+
+/* Optional overlay detail (re-usable) */
+.timeline-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  z-index: 30000;
+}
+
+.timeline-overlay .panel {
+  background: var(--white);
+  max-width: 900px;
+  width: calc(100% - 48px);
+  max-height: 80vh;
+  overflow: auto;
+  border-radius: 10px;
+  padding: 24px;
 }
 
 .dark-mode .timeline::before {
@@ -504,6 +618,15 @@ p, h2, blockquote, figure {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Prevent overlap with other blocks (info-box etc.) */
+.pull-quote {
+  max-width: 360px;
+}
+
+.info-box {
+  clear: both;
+}
+
 .pull-quote:hover {
   transform: translateX(5px);
   box-shadow: 0 6px 20px rgba(10, 61, 59, 0.15);
@@ -514,7 +637,10 @@ p, h2, blockquote, figure {
   background: #e6f4ef;
   border-left: 4px solid var(--green);
   padding: 15px 20px;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
