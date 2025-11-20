@@ -15,74 +15,58 @@
         Tilbake til forsiden
     </a>
 
-    <!-- Jumpscare -->
-    <div class="jumpscare-ghost">
-        <div class="ghost-image">👻</div>
+    <!-- Dark mode toggle (icon-only) and additional controls -->
+    <div class="top-controls">
+        <button id="mode-toggle" class="mode-toggle" aria-label="Bytt mørk/lys modus">🌙</button>
+        <button id="audio-toggle" class="mode-toggle audio-toggle" aria-pressed="false" aria-label="Ambientlyd på/av">🔈</button>
+        <button id="reader-toggle" class="mode-toggle reader-toggle" aria-pressed="false" aria-label="Lesemodus">📖</button>
     </div>
+
+    <!-- Reading progress bar -->
+    <div id="progress" aria-hidden="true"></div>
     
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">👻 Spøkelser i Østfold</h1>
+            <h1 class="hero-title">Spøkelser i Østfold</h1>
             <p class="hero-subtitle">En reise gjennom Østfolds mest uhyggelige legender</p>
         </div>
     </section>
 
     <div class="container">
+        <!-- Øverst bilde (1.jpg) ved skiltet til Fredriksten festning -->
+        <figure class="story-figure">
+            <img src="1.jpg" alt="Person ved skiltet til Fredriksten festning" loading="lazy">
+            <figcaption>Ved inngangen til Fredriksten festning før undersøkelsen.</figcaption>
+        </figure>
         <div class="intro">
             <p>Spøkelser har vært en del av folketroen i flere kulturer, felles i kulturene er spøkelser mennesker som går igjen etter døden, de kan være synlige eller usynlige. Spøkelser skaper redsel og uhygge, også når de viser seg for å gi gode råd. Det er ofte tenkt at spøkelser er mennesker som har dødd på unormal måte og ikke får fred i graven av ulike grunner.</p>
         </div>
 
-        <div class="legend-card">
-            <div class="card-header">
-                <h2>🏰 Den hvite dame på Fredriksten festning</h2>
-                <div class="location">📍 Halden</div>
-            </div>
-            
-            <p>Den hvite dame er en legende om et spøkelse som hjemsøker Fredriksten festning i Halden, det sies at hun kan bli sett i nærheten av <span class="highlight">klokketårnet ved fullmåne</span>, spesielt på lyse vår- og sommernetter. Hun er ofte beskrevet som blek med armene langs siden og kledd i en grå eller hvit kjole, hun berører ikke bakken, og noen har rapportert å sett henne vinke før hun forsvant inn i skogen.</p>
-
-            <div class="time-info">
-                <div class="time-badge">🕛 Midnatt</div>
-                <div class="time-badge">🌕 Fullmåne</div>
-            </div>
-
-            <p>Historien om den hvite dame er sentral rundt festningens historie, en teori om hennes opprinnelse omringer en trøndersk løytnant og hans kjæreste.</p>
-
-            <div class="investigation-box">
-                <h3>🔦 Vår undersøkelse</h3>
-                <p>Vi bestemte oss for å besøke Fredriksten festning i håp om å finne ut mer av legenden bak den hvite dame. De fleste som mener å ha sett henne har rapportert at hun viste seg ved midnatt når det var fullmåne.</p>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-time">23:50</div>
-                        <div class="timeline-content">Ankom festningen</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">23:55</div>
-                        <div class="timeline-content">Gikk mot klokketårnet på det høyeste punktet</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">00:00</div>
-                        <div class="timeline-content">Utforsket området ved klokketårnet</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">00:30</div>
-                        <div class="timeline-content">Avsluttet undersøkelsen - ingen tegn til den hvite dame</div>
-                    </div>
-                </div>
-
-                <p class="note">📝 Like ved klokketårnet fant vi tre identiske rom med dører med gitter. Vi fant ingen informasjon på hva dette hadde vært når festningen var i bruk.</p>
-            </div>
-        </div>
+        <section class="legend-section" id="hvite-dame">
+            <h2>Den hvite dame – Fredriksten festning (Halden)</h2>
+            <figure class="story-figure inline">
+                <img src="2.jpg" alt="Person foran klokketårnet på Fredriksten festning" loading="lazy">
+                <figcaption>Klokketårnet – kjernen i de fleste observasjoner.</figcaption>
+            </figure>
+            <p>Legenden om den hvite dame ved Fredriksten festning beskriver en stille skikkelse i lys kjole som glir forbi klokketårnet på klare netter. Vitner forteller om et blekt ansikt og en bevegelse som ikke følger vanlig gange – mer som sveving. Fortellingen har endret seg gjennom generasjoner, men kjerneelementet – tilsynekomst ved <span class="highlight">fullmåne rundt midnatt</span> – går igjen.</p>
+            <p>Opprinnelsesforklaringer varierer. Én versjon peker på en ung kvinne forlovet med en offiser som skal ha omkommet brått under festningsarbeid. En annen peker mot en sivilt ansatt som døde av sykdom og aldri fikk markert grav. Lokale historikere finner ingen direkte dokumentasjon, noe som gjør figuren mer mytisk enn personlig.</p>
+            <p>Naturlige forklaringer eksisterer: Måneskinn på fuktige steinflater kan danne vertikale reflekser som fra avstand likner en kropp. Tåke fra dalsiden kan trekke inn og brytes av varm luft fra murene. Psykologisk forventning spiller inn – besøkende kommer for å «se noe», og hjernen fyller tomrommet. Likevel rapporterer enkelte uavhengige grupper lignende sanseinntrykk: lys, stillhet, følelse av temperaturfall.</p>
+            <p>Under vår observasjon natt til fullmåne fordelte vi oss i rolig tempo rundt klokketårnet og noterte lys, vind, temperatur og lyd. Ingen uvanlig visuell manifestasjon oppsto, men tre identiske rom med gitterdører fremsto gåtefulle – funksjonen er ikke klart beskrevet i tilgjengelige kilder. Slike rom kan ha huset oppbevaring eller vakthold, men mangel på skriftlig forklaring gir grobunn for spekulasjon.</p>
+            <figure class="story-figure inline">
+                <img src="3.jpg" alt="Utsikt mot klokketårnet på festningen" loading="lazy">
+                <figcaption>Vår observasjonspunkt mot tårnet – jevnt måneskinn, ingen anomalier registrert.</figcaption>
+            </figure>
+        </section>
 
         <div class="divider">
-            <span>👁️ Andre spøkelser i Østfold 👁️</span>
+            <span>Andre spøkelser i Østfold</span>
         </div>
 
         <div class="legend-card">
             <div class="card-header">
-                <h2>⛪ Værne kloster</h2>
-                <div class="location">📍 Rygge, Moss kommune</div>
+                <h2>Værne kloster</h2>
+                <div class="location">Rygge, Moss kommune</div>
             </div>
 
             <p>Værne kloster er en herregård i Rygge som ligger i Moss kommune, herregården har en rik historie. I det tidligste kartet av Norge er det kun Sarpsborg og Værne som er tegnet inn øst for Oslofjorden. Værne kloster tilhørte småkonger fra området frem til 1190 da Kong Sverre Sigurdsson ga gården til Johanitterordenen.</p>
@@ -91,7 +75,7 @@
                 <h3>Rapporterte observasjoner:</h3>
                 
                 <div class="sighting">
-                    <div class="sighting-icon">🐴</div>
+                    <div class="sighting-icon"></div>
                     <div class="sighting-content">
                         <h4>Dødshestene</h4>
                         <p>To svarte hester har ved flere anledninger vist seg på tunet som et dødsvarsel.</p>
@@ -99,7 +83,7 @@
                 </div>
 
                 <div class="sighting">
-                    <div class="sighting-icon">👥</div>
+                    <div class="sighting-icon"></div>
                     <div class="sighting-content">
                         <h4>De tause mennene</h4>
                         <p>En rekke med menn som går gjennom innkjørselen til gården, uten å si et ord før de plutselig forsvinner.</p>
@@ -108,58 +92,24 @@
             </div>
         </div>
 
-        <div class="legend-card">
-            <div class="card-header">
-                <h2>🌊 Struten fyr</h2>
-                <div class="location">📍 Hvaler, Fredrikstad kommune</div>
-            </div>
+        <section class="legend-section" id="struten-fyr">
+            <h2>Struten fyr (Hvaler, Fredrikstad)</h2>
+            <p>Struten fyr ligger isolert på en liten holme – avstanden til fastlandet og perioder med værmessig avskjæring gjør stedet predisponert for historier. Før automatisering var fyret bemannet av familier som levde tett på sjøens rytmer.</p>
+            <p>Fortellingen om <strong>Albertine Marie Nannestad</strong>, knyttet til en tidlig fyrvokterfamilie, fremhever kontinuitet: hun gjør «den daglige runden» rundt boligen kl. 22:45. En slik presis tid antyder ritual. Lydfenomener – bølger som slår jevnt, vind som fanger kanter av bygninger – kan skape inntrykk av taktfast skritt.</p>
+            <p>Observasjoner «ved flaggstangen» passer med et eksponert punkt der vind retter fokus mot vertikale linjer; skygger fra måneskinn kan vandre når skyer passerer. Den «mystiske kampesteinen» som sies å snu seg hver torsdag kan like gjerne være en kombinasjon av våt overflate, tyngdepunkt-illusjoner og fortellertradisjon som gir ukentlig rytme.</p>
+            <p>Struten-fortellingene illustrerer hvordan isolasjon skaper behov for narrativer som både knytter og strukturerer tid. Der dokumentasjon mangler, fyller kollektive beskrivelser rommet – og gir identitet til et ellers funksjonelt teknisk anlegg.</p>
+        </section>
 
-            <p>Struten fyr er en fyrstasjon på en holme nordvest for Hvaler i Fredrikstad kommune. Fyret er ikke lett tilgjengelig for folk, og ble historisk bebodd av en fyrvokterfamilie i fyrvokterboligen.</p>
+        <section class="legend-section" id="praktisk">
+            <h2>Praktisk hensyn</h2>
+            <p>Fredriksten festning er tilgjengelig på dagtid – kveldsbesøk krever forsiktighet og respekt for avgrensede områder. Værne kloster og Struten fyr er delvis eller tidvis utilgjengelige; bevaringshensyn og privat eiendom må respekteres. Folkloren blir rikere når den oppleves ansvarlig.</p>
+        </section>
 
-            <div class="ghost-profile">
-                <h3>👻 Albertine Marie Nannestad</h3>
-                <p>Fra den første fyrvokterfamilien som flyttet inn på Struten. Hun går nå igjen rundt fyret.</p>
-            </div>
-
-            <div class="ghost-sightings">
-                <h3>Rapporterte observasjoner:</h3>
-                
-                <div class="sighting">
-                    <div class="sighting-icon">👣</div>
-                    <div class="sighting-content">
-                        <h4>Den daglige runden</h4>
-                        <p>Folk kan høre henne gå en fast runde rundt fyrvokterboligen hver kveld kl 22:45.</p>
-                        <div class="time-badge small">🕥 22:45</div>
-                    </div>
-                </div>
-
-                <div class="sighting">
-                    <div class="sighting-icon">🚩</div>
-                    <div class="sighting-content">
-                        <h4>Ved flaggstangen</h4>
-                        <p>Hun viser seg ved den gamle flaggstangen.</p>
-                    </div>
-                </div>
-
-                <div class="sighting">
-                    <div class="sighting-icon">🪨</div>
-                    <div class="sighting-content">
-                        <h4>Den mystiske kampesteinen</h4>
-                        <p>En kampestein på nordsiden snur seg hver torsdag ved midnatt på mystisk vis.</p>
-                        <div class="time-badge small">🕛 Torsdag midnatt</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="warning-box">
-            <h3>⚠️ Viktig informasjon</h3>
-            <p>Fredriksten festning er åpen for publikum på dagtid. Vær forsiktig ved besøk sent på kvelden, og respekter private eiendommer. Værne kloster og Struten fyr er ikke alltid tilgjengelige for publikum.</p>
-        </div>
-    </div>
+    </div> <!-- .container -->
 
     <footer>
-        <p>🌙 Spøkelseslegender fra Østfold | 2025 🌙</p>
+        <p>Spøkelseslegender fra Østfold | 2025</p>
+        <p> GRUPPE JSU </p>
     </footer>
 
     <script src="script.js"></script>
