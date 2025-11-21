@@ -9,11 +9,23 @@
   <style>
     /* Ekstra styling for Instagram-embed */
     .instagram-media {
-      margin: 20px auto !important;
+      margin: 16px auto !important;
       border-radius: 12px !important;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-      max-width: 540px !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+      max-width: clamp(300px, 85vw, 420px) !important;
       width: 100% !important;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .instagram-media:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18) !important;
+    }
+    @media (max-width: 480px) {
+      .instagram-media { margin: 12px auto !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .instagram-media { transition: none; }
+      .instagram-media:hover { transform: none; box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important; }
     }
   </style>
 </head>
