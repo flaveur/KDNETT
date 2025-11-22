@@ -18,7 +18,44 @@
             <source src="AI Prompt video.mp4" type="video/mp4">
             Ditt nettleser støtter ikke videoelementet.
         </video>
+        
+        <div class="video-scroll-hint">
+            <p>Scroll ned for å lese artikkelen</p>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
     </header>
+
+    <!-- Interactive AI Chat Interface -->
+    <div class="ai-chat-interface">
+        <div class="chat-header">
+            <h2>Snakk med AI</h2>
+            <p>Still et spørsmål om AI og arbeidsmarkedet</p>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <p>👋 Hei! Jeg kan svare på spørsmål om hvordan AI påvirker IT-studenter. Still et spørsmål nedenfor.</p>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <input type="text" id="chatInput" class="chat-input" placeholder="Still et spørsmål om AI...">
+            <button id="sendBtn" class="send-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="scroll-hint">
+            <p>Scroll ned for å lese hele artikkelen</p>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </div>
 
     <figure class="llm-collage" aria-labelledby="popular-llms-caption">
         <div class="llm-grid">
@@ -42,17 +79,17 @@
         <figcaption id="popular-llms-caption">Dette er et eksempel på populære språkmodeller (LLM).</figcaption>
     </figure>
 
-    <div class="container">
-        <div class="article-header" aria-hidden="true">
+    <article class="container">
+        <header class="article-header" aria-hidden="true">
             <h1 class="hero-title">Påvirker AI fremtiden og jobbsikkerheten til Informasjonsteknologi studenter?</h1>
             <p class="hero-subtitle">Utviklingen av AI-verktøy har tatt store sprang i de siste årene, denne utviklingen vil uten tvil endre arbeidsmarkedet. I denne artikkelen skal vi utforske, hvilke felter som er spesielt utsatt, hvordan studenter kan forberede seg på endringen, og om AI kommer til å ha en positiv eller negativ innvirkning på hverdagen.</p>
-        </div>
+        </header>
 
-        <div class="intro">
+        <section class="intro">
             <p>AI eller Kunstig Intelligens har tatt verden med storm, og viser ingen tegn til å stoppe. Tall fra Statista viser at markedet for AI har vokst til <span class="highlight">279 milliarder dollar</span>, og er forventet å nå <span class="highlight">1811 milliarder innen 2030</span>. Dette kan få store konsekvenser for arbeidsmarkedet.</p>
-        </div>
+        </section>
 
-        <div class="growth-chart">
+        <section class="growth-chart">
             <h3>AI-markedets vekst</h3>
             <div class="chart-container">
                 <div class="chart-bar" style="height: 40%;">
@@ -64,8 +101,8 @@
                     <div class="chart-label">2030</div>
                 </div>
             </div>
-        </div>
-        <div class="profile">
+        </section>
+        <section class="profile">
             <div class="profile-photo-wrap">
                                 <img src="Simen.jpg" alt="Simen Kingsrød" class="profile-photo" onerror="this.style.display='none'; this.parentNode.querySelector('.profile-fallback').style.display='flex'">
                                 <div class="profile-fallback" style="display:none" aria-hidden="true">
@@ -89,7 +126,7 @@
                     <p>Student i <strong>Informasjonsteknologi</strong> ved Høgskolen i Østfold. Simen bruker AI aktivt i studiene — han sier det gir raskere arbeidsgang, men stiller også spørsmål ved hva som går tapt når maskiner overtar rutineoppgavene. Han beskriver hvordan <span class="marker">verktøyene skalerer produktiviteten</span>, men samtidig presser ham til å reflektere over hvilke ferdigheter som fortsatt bør læres for hånd.</p>
                     <blockquote class="profile-quote">«AI gjør meg raskere — men det utfordrer også hvordan jeg lærer.»</blockquote>
             </div>
-        </div>
+        </section>
 
         <p class="enhanced">De største AI bedriftene har som mål å lage <span class="emph">Kunstig generell Intelligens</span>, denne type kunstig intelligens skal kunne utkonkurrere mennesker i det mest økonomisk verdifulle arbeidet. Å bygge disse <span class="emph">AI‑verktøyene</span> er svært kostbart, men å kopiere de og få de til å utføre oppgaver er billig. Det er estimert at innen 5 år vil <span class="emph">AI‑verktøy</span> kunne gjøre halvparten av <span class="emph">kontorjobber</span> billigere og bedre enn mennesker. AI er allerede kommet langt innenfor <span class="emph">programmering</span>, og det ser ut til at IT vil være en av yrkene mest utsatt av utviklingen av AI‑verktøy, vi har snakket med IT student ved Høgskolen i Østfold Simen Kingsrød (21) for å finne ut hva unge tenker om AI og hvilken effekt AI vil ha på samfunnet.</p>
 
@@ -101,7 +138,7 @@
 
         <p>Selv om AI kan være en trussel for flere felter, er det mange som mener at hvis studententene får relevant opplæring om AI, kan AI bli brukt til å endre hvordan arbeidere jobber i noen felter, isteden for at AI erstatter arbeiderene. Simen mener at opplæringen om AI, i dag ikke er god nok, og mener at studiene bør oppdateres til å integrere AI inn i flere fag, for å tilrettelegge studentene for et arbeidsliv med AI</p>
 
-        <div class="stats">
+        <section class="stats">
             <h3>Hva tenker amerikanske arbeidstakere om AI?</h3>
             <p style="text-align: center; margin-bottom: 30px;"><em>Undersøkelse av 5273 personer (Pew Research Center)</em></p>
             
@@ -134,14 +171,12 @@
                     <div class="bar-fill more-jobs" data-width="6%">6%</div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <p>Selv om tallene viser at mange er bekymret, er det også eksperter som mener AI ikke nødvendigvis vil erstatte jobber, men heller endre dem. De peker på at historien har vist at teknologiske gjennombrudd ofte skaper nye typer arbeid, selv om gamle yrker forsvinner.</p>
 
         <p>For IT-studenter kan det derfor bli avgjørende å lære seg å bruke AI aktivt. Både som et produktivitetsverktøy og som en teknologi de selv kan være med å utvikle og forbedre.</p>
-    </div>
-
-    <div class="scroll-indicator" onclick="scrollToTop()">↑</div>
+    </article>
 
     <footer>
         <p>Artikkel om AI og jobbsikkerhet for IT-studenter | 2025</p>

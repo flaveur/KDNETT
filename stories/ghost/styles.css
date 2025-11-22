@@ -18,7 +18,8 @@
 body {
     --font-base: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
     font-family: var(--font-base);
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.8;
     color: #333;
     background-color: var(--light-bg);
     overflow-x: hidden;
@@ -42,7 +43,7 @@ body {
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -74,7 +75,7 @@ body {
     color: var(--green);
     border: 1px solid rgba(10,61,59,0.15);
     padding: 10px 16px;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1;
     border-radius: 40px;
     cursor: pointer;
@@ -90,7 +91,7 @@ body {
 .story-figure { margin: 30px auto; text-align: center; }
 .story-figure.inline { margin: 20px 0; }
 .story-figure img { width: 100%; max-width: 760px; border-radius: 14px; display: block; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-.story-figure figcaption { font-size: 0.85rem; color: var(--dark-gray); margin-top: 8px; letter-spacing: .3px; }
+.story-figure figcaption { font-size: 0.95rem; color: var(--dark-gray); margin-top: 8px; letter-spacing: .3px; }
 
 /* Dark mode adjustments */
 .dark-mode { background: #0e1716; color: #e6f3f1; }
@@ -165,8 +166,8 @@ body {
 .reader-mode .legend-card { box-shadow:none; border:none; background:transparent; }
 
 /* Pull quote & drop cap */
-.pull-quote { font-size:1.4rem; font-style:italic; border-left:4px solid var(--accent); padding:12px 18px; margin:18px 0; background: rgba(254,243,199,0.3); }
-p.drop-cap::first-letter { float:left; font-size:3.2rem; line-height:0.8; margin-right:10px; font-weight:700; color:var(--green); }
+.pull-quote { font-size:1.5rem; font-style:italic; border-left:4px solid var(--accent); padding:12px 18px; margin:18px 0; background: rgba(254,243,199,0.3); }
+p.drop-cap::first-letter { float:left; font-size:3.4rem; line-height:0.8; margin-right:10px; font-weight:700; color:var(--green); }
 
 /* Hero parallax variable */
 .hero-section { --parallax: 0px; }
@@ -574,7 +575,7 @@ footer {
         top: 10px;
         left: 10px;
         padding: 8px 16px;
-        font-size: 12px;
+        font-size: 13px;
     }
 }
 
@@ -645,7 +646,7 @@ footer {
         top: 10px;
         left: 10px;
         padding: 10px 16px;
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .ghost-image {
@@ -715,7 +716,7 @@ footer {
         top: 10px;
         left: 10px;
         padding: 8px 12px;
-        font-size: 12px;
+        font-size: 13px;
         gap: 6px;
     }
 
