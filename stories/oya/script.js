@@ -25,16 +25,36 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ========== READING PROGRESS BAR ==========
+// ========== READING PROGRESS BAR + THEME OVERLAY ==========
 const progressBar = document.createElement('div');
 progressBar.className = 'reading-progress';
 document.body.prepend(progressBar);
+
+// Theme overlay for subtle green→red dramaturgy
+const overlay = document.createElement('div');
+overlay.className = 'theme-overlay';
+document.body.prepend(overlay);
 
 window.addEventListener('scroll', () => {
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   progressBar.style.width = scrolled + '%';
+
+  // Adjust overlay opacity; reach ~full around 70% scroll
+  const ratio = Math.min(1, (height ? (winScroll / height) : 0) / 0.7);
+  document.documentElement.style.setProperty('--overlay-opacity', ratio.toFixed(3));
+
+  // Subdue the flag after leaving hero
+  const hero = document.getElementById('hero');
+  const flag = document.querySelector('.palestine-flag');
+  if (hero && flag) {
+    if (winScroll > hero.offsetHeight * 0.35) {
+      flag.classList.add('flag-fade');
+    } else {
+      flag.classList.remove('flag-fade');
+    }
+  }
 });
 
 // ========== EXPANDABLE INFO BOXES ==========
@@ -64,26 +84,43 @@ function highlightKeywords() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Kjør keyword highlighting
+  //Kjører keyword highlighting
   highlightKeywords();
   const elements = document.querySelectorAll("p, h2, blockquote, figure");
+  elements.forEach(el => el.classList.add('visible'));
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
+  // Tag Gaza-related quotes and activism pull-quotes
+  const gazaKeywords = [/\bgaza\b/i, /\bokkupasjon\b/i, /\bfolkemord\b/i];
+  document.querySelectorAll('blockquote').forEach(bq => {
+    const t = bq.textContent || '';
+    if (gazaKeywords.some(re => re.test(t))) {
+      bq.classList.add('gaza');
+    }
+  });
+  const activismKeys = [/Palestinakomiteen/i, /BDS/i, /solidarit/i, /aktivist/i];
+  document.querySelectorAll('.pull-quote').forEach(pq => {
+    const t = pq.textContent || '';
+    if (activismKeys.some(re => re.test(t))) {
+      pq.classList.add('activism');
+    }
+  });
 
-  elements.forEach(el => observer.observe(el));
+  // Subtle pulse for critical terms
+  const pulseWords = ['Gaza','okkupasjon','folkemord'];
+  document.querySelectorAll('.highlight-word').forEach(el => {
+    const txt = (el.textContent || '').trim();
+    if (pulseWords.some(w => new RegExp('^'+w+'$', 'i').test(txt))) {
+      el.classList.add('pulse');
+    }
+  });
 });
 
 const toggleBtn = document.getElementById("toggle-mode");
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-});
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
