@@ -10,3 +10,163 @@ body {
 	text-rendering: optimizeLegibility;
 	margin:0;
 }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        /*body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background:#f0f4f8;
+            overflow-x:hidden;
+            color:#222;
+        }*/
+
+        .intro {
+            height:100vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            background-image: url(images/StormenAmy.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color:#fff;
+            text-align:center;
+            padding:2rem;
+            position:relative;
+            z-index:10;
+        }
+        .intro h1 {
+            font-size:4.5rem; 
+            letter-spacing:1px;
+            color: #0a2235;
+        }
+
+        .innledning {
+            height:105vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            background-color: #0a2235;
+            padding:2rem;
+            position:relative;
+            z-index:10;
+        }
+
+        .del1 {
+            height:105vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            background-color: #0a2235;
+            padding:2rem;
+            position:relative;
+            z-index:10;
+        }
+
+        .del1img {
+            height: 600px;
+            width: 800px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 3s ease-out;
+        }
+
+        #map {position:fixed; inset:0; z-index:1;}
+
+        .city-section {
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:2rem;
+            position:relative;
+            z-index:10;
+        }
+        
+        .article {
+            background:rgba(255, 255, 255, 0.76);
+            width:960px;max-width:94vw;
+            padding:3.5rem 4rem;
+            border-radius:12px;
+            box-shadow:0 30px 80px rgba(0,0,0,.22);
+            line-height:1.75;
+            font-size:1.22rem;
+            color:#111;
+        }
+        .article-white{box-shadow:0 40px 100px rgba(0,0,0,.3)}
+        .byline{
+            font-size:2.5rem;
+            font-weight:900;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            color:#000;
+            margin-bottom:1.8rem;
+            text-align:left;
+        }
+        .text{
+            margin-bottom:2rem
+        }
+        .person{
+            display:flex;
+            gap:2.5rem;
+            margin-top:3rem;
+            align-items:flex-start
+        }
+        .img{
+            width:180px;
+            height:180px;
+            border:8px solid #fff;
+            border-radius:8px;
+            background:#2c7bb6;
+            flex-shrink:0;
+            box-shadow:0 10px 30px rgba(0,0,0,.2);
+        }
+        .info{
+            background:#f8f8f8;
+            padding:1.4rem 1.6rem;
+            border-radius:8px;
+            align-self:center;
+            min-width:260px;
+        }
+        .name{
+            font-size:1.35rem;
+            font-weight:800;
+            color:#000;
+            margin-bottom:0.3rem
+        }
+        .age{
+            font-size:1.1rem;
+            color:#d81b60;
+            font-weight:600
+        }
+
+        .navsection a {
+            margin: 0 20px;
+            font-size: 1.4rem;
+            color: #11998e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .navsection a:hover {
+            text-decoration: underline; 
+        }
+
+        @media(max-width:840px){
+            .article{
+                padding:2.5rem 2rem
+            }
+            .byline{
+                font-size:2.8rem
+            }
+            .person{flex-direction:column;
+                align-items:center;
+                text-align:center
+                }
+            .info{
+                align-self:stretch
+            }
+        }
