@@ -154,10 +154,13 @@ if (bgVideo && mainContainer) {
     }
 }
 
-// Hide video scroll hint when user scrolls down
+// Hide video scroll hint when user scrolls down past the video
 window.addEventListener('scroll', () => {
     if (videoScrollHint) {
-        if (window.scrollY > 100) {
+        const heroSection = document.querySelector('.hero-section');
+        const heroHeight = heroSection ? heroSection.offsetHeight : window.innerHeight;
+        
+        if (window.scrollY > heroHeight * 0.5) {
             videoScrollHint.style.opacity = '0';
             videoScrollHint.style.pointerEvents = 'none';
         } else {

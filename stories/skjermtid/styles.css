@@ -20,6 +20,37 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Back to Home Button */
+.back-to-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 8px;
+    color: var(--screen-glow);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.back-to-home:hover {
+    background: rgba(0, 217, 255, 0.2);
+    border-color: var(--screen-glow);
+    transform: translateX(-2px);
+}
+
+.back-to-home svg {
+    flex-shrink: 0;
+}
+
 /* Hero iPhone Section */
 .hero-iphone-section {
     min-height: 100vh;

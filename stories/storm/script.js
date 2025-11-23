@@ -23,15 +23,27 @@
         const cities = [
             { s: 'section-intro-article', lat: 61,    lng: 9,     zoom: 6 },
             { s: 'section-del1',          lat: 61,    lng: 9,     zoom: 6 },
-            { s: 'section-bergen',       lat: 60.392,lng: 5.324, zoom: 12 },
-            { s: 'section-kristiansand', lat: 58.146,lng: 7.996, zoom: 12 },
-            { s: 'section-sarpsborg',    lat: 59.284,lng: 11.110,zoom: 12 },
-            { s: 'section-elverum',      lat: 60.882,lng: 11.562,zoom: 12 },
-            { s: 'section-roros',        lat: 62.574,lng: 11.384,zoom: 12 },
-            { s: 'section-trondheim',    lat: 63.430,lng: 10.393,zoom: 12 }
+            { s: 'section-bergen',       lat: 60.392,lng: 5.324, zoom: 12, name: 'Bergen' },
+            { s: 'section-kristiansand', lat: 58.146,lng: 7.996, zoom: 12, name: 'Kristiansand' },
+            { s: 'section-sarpsborg',    lat: 59.284,lng: 11.110,zoom: 12, name: 'Sarpsborg' },
+            { s: 'section-elverum',      lat: 60.882,lng: 11.562,zoom: 12, name: 'Elverum' },
+            { s: 'section-roros',        lat: 62.574,lng: 11.384,zoom: 12, name: 'Røros' },
+            { s: 'section-trondheim',    lat: 63.430,lng: 10.393,zoom: 12, name: 'Trondheim' }
         ];
 
         let current = -1;
+        const markers = [];
+
+        // Legg til markører for hver by (men skjul dem til senere)
+        cities.forEach((city, i) => {
+            if (i > 1 && city.name) { // Skip intro og del1
+                const marker = L.marker([city.lat, city.lng], {
+                    opacity: 0
+                }).addTo(map);
+                marker.bindPopup(`<b>${city.name}</b>`);
+                markers.push({ marker, city, index: i });
+            }
+        });
 
         cities.forEach((city, i) => {
             ScrollTrigger.create({
@@ -43,9 +55,22 @@
             });
         });
 
+        // Når oversikt-seksjonen kommer i view, zoom ut og vis alle markører
+        ScrollTrigger.create({
+            trigger: "#section-overview",
+            start: "top center",
+            onEnter: () => showOverview(),
+            onEnterBack: () => showOverview()
+        });
+
         function flyToCity(i) {
             const city = cities[i];
             const article = document.querySelector(`#${city.s} .article`);
+
+            // Skjul alle markører når vi zoomer inn på en by
+            markers.forEach(({ marker }) => {
+                marker.setOpacity(0);
+            });
 
             // De to første skal ikke animeres inn
             if (i <= 1) {
@@ -76,6 +101,42 @@
 
             current = i;
         }
+
+        function showOverview() {
+            // Zoom ut til oversikt over Norge
+            gsap.to(proxy, {
+                lat: 61,
+                lng: 9,
+                zoom: 6,
+                duration: 2,
+                ease: "power2.inOut"
+            });
+
+            // Vis alle markører
+            markers.forEach(({ marker }) => {
+                setTimeout(() => {
+                    marker.setOpacity(1);
+                }, 1500);
+            });
+
+            current = 0; // Reset til oversikt
+        }
+
+        // Klikk-hendelser for knappene
+        document.querySelectorAll('.city-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const cityName = btn.dataset.city;
+                const cityData = cities.find(c => c.s === `section-${cityName}`);
+                
+                if (cityData) {
+                    // Scroll til seksjonen
+                    const section = document.getElementById(cityData.s);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+        });
 
         // Start på oversikt
         flyToCity(0);
