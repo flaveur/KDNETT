@@ -1,7 +1,7 @@
-        // Alle artikler starter usynlige og 100px nede...
+        // Alle artikler starter usynlige og 100px ned
         gsap.set(".city-section .article", { opacity: 0, y: 100 });
 
-        // ...men de to innledende artiklene skal være fullt synlige fra start
+        // unntak av de to første
         gsap.set("#section-intro-article .article, #section-del1 .article", { opacity: 1, y: 0 });
 
         const map = L.map('map', {
@@ -9,6 +9,8 @@
             scrollWheelZoom: false, boxZoom: false, keyboard: false, zoomControl: false
         }).setView([61, 9], 6);
 
+
+        //API
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap'
         }).addTo(map);
@@ -16,6 +18,8 @@
         const proxy = { lat: 61, lng: 9, zoom: 6 };
         gsap.ticker.add(() => map.setView([proxy.lat, proxy.lng], proxy.zoom, { animate: false }));
 
+
+        // Byene med koordinater og zoom-nivå
         const cities = [
             { s: 'section-intro-article', lat: 61,    lng: 9,     zoom: 6 },
             { s: 'section-del1',          lat: 61,    lng: 9,     zoom: 6 },
@@ -43,14 +47,14 @@
             const city = cities[i];
             const article = document.querySelector(`#${city.s} .article`);
 
-            // De to første (intro + del1) skal ikke animeres inn
+            // De to første skal ikke animeres inn
             if (i <= 1) {
                 gsap.to(proxy, { lat: city.lat, lng: city.lng, zoom: city.zoom, duration: 0 });
                 current = i;
                 return;
             }
 
-            // Alle by-artiklene får fly-inn + fade-inn
+            // Alle by-artiklene får flight og fade
             gsap.set(article, { opacity: 0, y: 100 });
 
             gsap.to(proxy, {
@@ -73,5 +77,5 @@
             current = i;
         }
 
-        // Start på oversikt (ingen animasjon)
+        // Start på oversikt
         flyToCity(0);
