@@ -3,8 +3,8 @@ const video = document.getElementById('iphone-video');
 const playButton = document.getElementById('play-button');
 
 if (video && playButton) {
-    // Sett volum til 50%
-    video.volume = 0.5;
+    // Sett volum til 5%
+    video.volume = 0.05;
     
     // Optimaliser videokvalitet basert på nettverkshastighet
     if ('connection' in navigator) {
