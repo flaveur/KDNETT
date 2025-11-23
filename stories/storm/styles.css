@@ -69,33 +69,29 @@ body {
             width: 800px;
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(80px);
-            transition: all 3s ease-out;
-        }
 
         #map {position:fixed; inset:0; z-index:1;}
 
         .city-section {
-            height:100vh;
+            height:150vh;
             display:flex;
             align-items:center;
             justify-content:center;
             padding:2rem;
             position:relative;
-            z-index:10;
+            z-index: 10;
+			background-color: rgba(0, 0, 0, 0.192);
         }
         
         .article {
-            background:rgba(255, 255, 255, 0.76);
+            background: #0a2235;
             width:960px;max-width:94vw;
             padding:3.5rem 4rem;
             border-radius:12px;
             box-shadow:0 30px 80px rgba(0,0,0,.22);
             line-height:1.75;
             font-size:1.22rem;
-            color:#111;
+            color:#fff;
         }
         .article-white{box-shadow:0 40px 100px rgba(0,0,0,.3)}
         .byline{
@@ -103,7 +99,7 @@ body {
             font-weight:900;
             text-transform:uppercase;
             letter-spacing:1px;
-            color:#000;
+            color:#fff;
             margin-bottom:1.8rem;
             text-align:left;
         }
@@ -119,14 +115,14 @@ body {
         .img{
             width:180px;
             height:180px;
-            border:8px solid #fff;
+            border:8px solid #293542;
             border-radius:8px;
             background:#2c7bb6;
             flex-shrink:0;
             box-shadow:0 10px 30px rgba(0,0,0,.2);
         }
         .info{
-            background:#f8f8f8;
+            background: #293542;
             padding:1.4rem 1.6rem;
             border-radius:8px;
             align-self:center;
@@ -135,7 +131,7 @@ body {
         .name{
             font-size:1.35rem;
             font-weight:800;
-            color:#000;
+            color:#fff;
             margin-bottom:0.3rem
         }
         .age{
