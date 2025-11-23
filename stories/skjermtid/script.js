@@ -88,4 +88,74 @@ if (video && playButton) {
 // Smooth scroll for any navigation if needed
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Skjermtid artikkel lastet');
+
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeControls = lightbox ? lightbox.querySelectorAll('[data-close-overlay]') : [];
+    let lastActiveElement = null;
+
+    const closeLightbox = () => {
+        if (!lightbox) {
+            return;
+        }
+        lightbox.setAttribute('hidden', '');
+        lightboxImage.src = '';
+        lightboxCaption.textContent = '';
+        document.body.classList.remove('lightbox-open');
+        if (lastActiveElement) {
+            lastActiveElement.focus({ preventScroll: true });
+            lastActiveElement = null;
+        }
+    };
+
+    const openLightbox = (trigger, src, altText) => {
+        if (!lightbox || !lightboxImage) {
+            return;
+        }
+        lastActiveElement = trigger;
+        lightboxImage.src = src;
+        lightboxImage.alt = altText || '';
+        if (lightboxCaption) {
+            lightboxCaption.textContent = altText || '';
+        }
+        lightbox.removeAttribute('hidden');
+        document.body.classList.add('lightbox-open');
+        const focusTarget = lightbox.querySelector('.lightbox-close');
+        if (focusTarget) {
+            focusTarget.focus({ preventScroll: true });
+        }
+    };
+
+    const placeholders = document.querySelectorAll('.screentime-placeholder.has-image');
+    placeholders.forEach((placeholder) => {
+        const imageElement = placeholder.querySelector('img');
+        const src = placeholder.getAttribute('data-lightbox') || (imageElement ? imageElement.src : '');
+        if (!src) {
+            return;
+        }
+
+        const altText = imageElement ? imageElement.alt : '';
+
+        placeholder.addEventListener('click', () => {
+            openLightbox(placeholder, src, altText);
+        });
+
+        placeholder.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openLightbox(placeholder, src, altText);
+            }
+        });
+    });
+
+    closeControls.forEach((control) => {
+        control.addEventListener('click', closeLightbox);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && document.body.classList.contains('lightbox-open')) {
+            closeLightbox();
+        }
+    });
 });
