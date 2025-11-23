@@ -20,6 +20,7 @@
         <button id="mode-toggle" class="mode-toggle" aria-label="Bytt mørk/lys modus">🌙</button>
         <button id="audio-toggle" class="mode-toggle audio-toggle" aria-pressed="false" aria-label="Ambientlyd på/av">🔈</button>
         <button id="reader-toggle" class="mode-toggle reader-toggle" aria-pressed="false" aria-label="Lesemodus">📖</button>
+        <button id="seance-toggle" class="mode-toggle seance-toggle" aria-pressed="false" aria-label="Séanse-modus">🔮</button>
     </section>
 
     <!-- Reading progress bar -->
@@ -32,29 +33,63 @@
             <p class="hero-subtitle">En reise gjennom Østfolds mest uhyggelige legender</p>
         </section>
     </section>
+    
+    <!-- Full-screen painting frame that wraps ALL content -->
+    <div class="painting-frame">
+        <div class="frame-content">
+        <div class="spectral-fog" aria-hidden="true"></div>
+        <div class="mist-low" aria-hidden="true"></div>
+        <div id="shadow-apparition" aria-hidden="true"></div>
+        <div class="shadow-layer" aria-hidden="true">
+            <span class="shadow-figure"></span>
+            <span class="shadow-figure"></span>
+        </div>
+        <div class="candle-vignette" aria-hidden="true"></div>
+        <div class="spirit-footsteps" aria-hidden="true">
+            <span class="footsteps-track"></span>
+        </div>
+        <section class="seance-overlay" aria-hidden="true">
+            <h2>Spiritus Communicare</h2>
+            <p>Bruk hodetelefoner. Fragmenter fra brev, loggbøker og øyenvitner vises mens radio-statiske stemmer leter etter svar.</p>
+            <ul>
+                <li>«Hold lyset tent, ellers kommer hun tilbake»</li>
+                <li>«Albertine gikk ned trappen igjen…»</li>
+                <li>«Dødshestene er på vei, skjul deg»</li>
+            </ul>
+        </section>
+    <!-- Small overlay frames (deprecated) left in DOM but hidden by CSS -->
+    <section class="frame-overlay" aria-hidden="false">
+        <figure class="image-frame" aria-label="Visuelt motiv" role="group">
+            <img src="2.jpg" alt="Klokketårnet ved Fredriksten festning" loading="lazy">
+        </figure>
+        <section class="text-frame" aria-live="polite" aria-atomic="true">
+            <h2 class="frame-title">Den hvite dame</h2>
+            <p class="frame-text">Legenden ved Fredriksten festning beskriver en lys skikkelse som glir forbi klokketårnet på klare netter.</p>
+        </section>
+    </section>
 
     <section class="container">
         <!-- Øverst bilde (1.jpg) ved skiltet til Fredriksten festning -->
         <figure class="story-figure">
-            <img src="1.jpg" alt="Person ved skiltet til Fredriksten festning" loading="lazy">
+            <img class="photo-develop" src="1.jpg" alt="Person ved skiltet til Fredriksten festning" loading="lazy">
             <figcaption>Ved inngangen til Fredriksten festning før undersøkelsen.</figcaption>
         </figure>
         <section class="intro">
-            <p>Spøkelser har vært en del av folketroen i flere kulturer, felles i kulturene er spøkelser mennesker som går igjen etter døden, de kan være synlige eller usynlige. Spøkelser skaper redsel og uhygge, også når de viser seg for å gi gode råd. Det er ofte tenkt at spøkelser er mennesker som har dødd på unormal måte og ikke får fred i graven av ulike grunner.</p>
+            <p class="ghost-typing" data-ghost-delay="600">Spøkelser har vært en del av folketroen i flere kulturer, felles i kulturene er spøkelser mennesker som går igjen etter døden, de kan være synlige eller usynlige. Spøkelser skaper redsel og uhygge, også når de viser seg for å gi gode råd. Det er ofte tenkt at spøkelser er mennesker som har dødd på unormal måte og ikke får fred i graven av ulike grunner.</p>
         </section>
 
-        <section class="legend-section" id="hvite-dame">
+        <section class="legend-section" id="hvite-dame" data-location="fredriksten" data-intensity="high">
             <h2>Den hvite dame – Fredriksten festning (Halden)</h2>
             <figure class="story-figure inline">
-                <img src="2.jpg" alt="Person foran klokketårnet på Fredriksten festning" loading="lazy">
+                <img class="photo-develop" src="2.jpg" alt="Person foran klokketårnet på Fredriksten festning" loading="lazy">
                 <figcaption>Klokketårnet – kjernen i de fleste observasjoner.</figcaption>
             </figure>
-            <p>Legenden om den hvite dame ved Fredriksten festning beskriver en stille skikkelse i lys kjole som glir forbi klokketårnet på klare netter. Vitner forteller om et blekt ansikt og en bevegelse som ikke følger vanlig gange – mer som sveving. Fortellingen har endret seg gjennom generasjoner, men kjerneelementet – tilsynekomst ved <span class="highlight">fullmåne rundt midnatt</span> – går igjen.</p>
-            <p>Opprinnelsesforklaringer varierer. Én versjon peker på en ung kvinne forlovet med en offiser som skal ha omkommet brått under festningsarbeid. En annen peker mot en sivilt ansatt som døde av sykdom og aldri fikk markert grav. Lokale historikere finner ingen direkte dokumentasjon, noe som gjør figuren mer mytisk enn personlig.</p>
+            <p class="ghost-typing" data-ghost-delay="400">Legenden om den hvite dame ved Fredriksten festning beskriver en stille skikkelse i lys kjole som glir forbi klokketårnet på klare netter. Vitner forteller om et blekt ansikt og en bevegelse som ikke følger vanlig gange – mer som sveving. Fortellingen har endret seg gjennom generasjoner, men kjerneelementet – tilsynekomst ved <span class="highlight cold-trigger">fullmåne rundt midnatt</span> – går igjen.</p>
+            <p data-chime="echo">Opprinnelsesforklaringer varierer. Én versjon peker på en ung kvinne forlovet med en offiser som skal ha omkommet brått under festningsarbeid. En annen peker mot en sivilt ansatt som døde av sykdom og aldri fikk markert grav. Lokale historikere finner ingen direkte dokumentasjon, noe som gjør figuren mer mytisk enn personlig.</p>
             <p>Naturlige forklaringer eksisterer: Måneskinn på fuktige steinflater kan danne vertikale reflekser som fra avstand likner en kropp. Tåke fra dalsiden kan trekke inn og brytes av varm luft fra murene. Psykologisk forventning spiller inn – besøkende kommer for å «se noe», og hjernen fyller tomrommet. Likevel rapporterer enkelte uavhengige grupper lignende sanseinntrykk: lys, stillhet, følelse av temperaturfall.</p>
             <p>Under vår observasjon natt til fullmåne fordelte vi oss i rolig tempo rundt klokketårnet og noterte lys, vind, temperatur og lyd. Ingen uvanlig visuell manifestasjon oppsto, men tre identiske rom med gitterdører fremsto gåtefulle – funksjonen er ikke klart beskrevet i tilgjengelige kilder. Slike rom kan ha huset oppbevaring eller vakthold, men mangel på skriftlig forklaring gir grobunn for spekulasjon.</p>
             <figure class="story-figure inline">
-                <img src="3.jpg" alt="Utsikt mot klokketårnet på festningen" loading="lazy">
+                <img class="photo-develop" src="3.jpg" alt="Utsikt mot klokketårnet på festningen" loading="lazy">
             <figcaption>Vår observasjonspunkt mot tårnet – jevnt måneskinn, ingen anomalier registrert.</figcaption>
         </figure>
         </section>
@@ -63,18 +98,26 @@
             <span>Andre spøkelser i Østfold</span>
         </section>
 
-        <article class="legend-card">
+        <article class="legend-card" data-location="vaerne" data-intensity="low">
             <section class="card-header">
                 <h2>Værne kloster</h2>
                 <section class="location">Rygge, Moss kommune</section>
             </section>
 
-            <p>Værne kloster er en herregård i Rygge som ligger i Moss kommune, herregården har en rik historie. I det tidligste kartet av Norge er det kun Sarpsborg og Værne som er tegnet inn øst for Oslofjorden. Værne kloster tilhørte småkonger fra området frem til 1190 da Kong Sverre Sigurdsson ga gården til Johanitterordenen.</p>
+            <div class="media-pair">
+                <figure class="story-figure inline">
+                    <img class="photo-develop" src="images/thumb.png" alt="Værne kloster" loading="lazy">
+                    <figcaption>Værne kloster - en herregård med rik historie.</figcaption>
+                </figure>
+                <div class="media-text">
+                    <p>Værne kloster er en herregård i Rygge som ligger i Moss kommune, herregården har en rik historie. I det tidligste kartet av Norge er det kun Sarpsborg og Værne som er tegnet inn øst for Oslofjorden. Værne kloster tilhørte småkonger fra området frem til 1190 da Kong Sverre Sigurdsson ga gården til Johanitterordenen.</p>
+                </div>
+            </div>
 
             <section class="ghost-sightings">
                 <h3>Rapporterte observasjoner:</h3>
                 
-                <article class="sighting">
+                <article class="sighting" data-chime="bell">
                     <section class="sighting-icon"></section>
                     <section class="sighting-content">
                         <h4>Dødshestene</h4>
@@ -90,15 +133,24 @@
                     </section>
                 </article>
             </section>
-        </article>        <section class="legend-section" id="struten-fyr">
+        </article>
+        <section class="legend-section" id="struten-fyr" data-location="struten" data-intensity="medium">
             <h2>Struten fyr (Hvaler, Fredrikstad)</h2>
-            <p>Struten fyr ligger isolert på en liten holme – avstanden til fastlandet og perioder med værmessig avskjæring gjør stedet predisponert for historier. Før automatisering var fyret bemannet av familier som levde tett på sjøens rytmer.</p>
-            <p>Fortellingen om <strong>Albertine Marie Nannestad</strong>, knyttet til en tidlig fyrvokterfamilie, fremhever kontinuitet: hun gjør «den daglige runden» rundt boligen kl. 22:45. En slik presis tid antyder ritual. Lydfenomener – bølger som slår jevnt, vind som fanger kanter av bygninger – kan skape inntrykk av taktfast skritt.</p>
-            <p>Observasjoner «ved flaggstangen» passer med et eksponert punkt der vind retter fokus mot vertikale linjer; skygger fra måneskinn kan vandre når skyer passerer. Den «mystiske kampesteinen» som sies å snu seg hver torsdag kan like gjerne være en kombinasjon av våt overflate, tyngdepunkt-illusjoner og fortellertradisjon som gir ukentlig rytme.</p>
-            <p>Struten-fortellingene illustrerer hvordan isolasjon skaper behov for narrativer som både knytter og strukturerer tid. Der dokumentasjon mangler, fyller kollektive beskrivelser rommet – og gir identitet til et ellers funksjonelt teknisk anlegg.</p>
+            <div class="media-pair">
+                <figure class="story-figure inline">
+                    <img class="photo-develop" src="images/strutenfyr.png" alt="Struten fyr på holmen" loading="lazy">
+                    <figcaption>Struten fyr - isolert på sin lille holme.</figcaption>
+                </figure>
+                <div class="media-text">
+                    <p class="ghost-typing" data-ghost-delay="500">Struten fyr ligger isolert på en liten holme – avstanden til fastlandet og perioder med værmessig avskjæring gjør stedet predisponert for historier. Før automatisering var fyret bemannet av familier som levde tett på sjøens rytmer.</p>
+                    <p data-chime="echo">Fortellingen om <strong>Albertine Marie Nannestad</strong>, knyttet til en tidlig fyrvokterfamilie, fremhever kontinuitet: hun gjør «den daglige runden» rundt boligen kl. 22:45. En slik presis tid antyder ritual. Lydfenomener – bølger som slår jevnt, vind som fanger kanter av bygninger – kan skape inntrykk av taktfast skritt.</p>
+                    <p>Observasjoner «ved flaggstangen» passer med et eksponert punkt der vind retter fokus mot vertikale linjer; skygger fra måneskinn kan vandre når skyer passerer. Den «mystiske kampesteinen» som sies å snu seg hver torsdag kan like gjerne være en kombinasjon av våt overflate, tyngdepunkt-illusjoner og fortellertradisjon som gir ukentlig rytme.</p>
+                    <p>Struten-fortellingene illustrerer hvordan isolasjon skaper behov for narrativer som både knytter og strukturerer tid. Der dokumentasjon mangler, fyller kollektive beskrivelser rommet – og gir identitet til et ellers funksjonelt teknisk anlegg.</p>
+                </div>
+            </div>
         </section>
 
-        <section class="legend-section" id="praktisk">
+        <section class="legend-section" id="praktisk" data-location="praktisk" data-intensity="low">
             <h2>Praktisk hensyn</h2>
             <p>Fredriksten festning er tilgjengelig på dagtid – kveldsbesøk krever forsiktighet og respekt for avgrensede områder. Værne kloster og Struten fyr er delvis eller tidvis utilgjengelige; bevaringshensyn og privat eiendom må respekteres. Folkloren blir rikere når den oppleves ansvarlig.</p>
         </section>
@@ -110,6 +162,9 @@
         <p> GRUPPE JSU </p>
     </footer>
 
+        </div> <!-- .frame-content -->
+    </div> <!-- .painting-frame -->
+    
     <script src="script.js"></script>
 </body>
 </html>

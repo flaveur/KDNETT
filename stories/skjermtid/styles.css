@@ -16,6 +16,8 @@ body {
     line-height: 1.6;
     background: #0f0f0f;
     color: #e0e0e0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Hero iPhone Section */
@@ -497,6 +499,36 @@ body {
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--screen-glow), transparent);
+}
+
+/* Reading prose: standalone text blocks for better readability */
+body > p {
+    max-width: 70ch;
+    margin: 40px auto 80px;
+    padding: 0 24px;
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: #d9e2ec;
+}
+
+/* Slightly larger, more spacious text within info/recommendations */
+.info-section .info-text {
+    line-height: 1.85;
+    font-size: 1.05rem;
+}
+
+.recommendations .rec-info p {
+    line-height: 1.85;
+}
+
+@media (max-width: 768px) {
+    body > p {
+        max-width: 68ch;
+        margin: 24px auto 56px;
+        padding: 0 16px;
+        font-size: 1rem;
+        line-height: 1.75;
+    }
 }
 
 .info-grid {
