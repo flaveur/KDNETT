@@ -82,7 +82,8 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(14, 201, 166, 0.1) 1px, transparent 1px);
+    /* Replaced gradient with a subtle solid tint for a cohesive color system */
+    background: rgba(14, 201, 166, 0.06);
     background-size: 50px 50px;
     animation: moveBackground 20s linear infinite;
 }
@@ -244,7 +245,8 @@ p {
 /* Enhanced paragraphs */
 .enhanced {
     position: relative;
-    background: linear-gradient(180deg, rgba(14,201,166,0.00) 0%, rgba(14,201,166,0.06) 100%);
+    /* Use a single soft accent tint instead of a gradient */
+    background: rgba(14,201,166,0.06);
     padding: 10px 16px 12px;
     border-radius: 10px;
     opacity: 0;
@@ -261,7 +263,8 @@ p {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, var(--accent), var(--green));
+    /* Use single-color accent bar for consistency */
+    background: var(--accent);
     opacity: .35;
     border-radius: 4px;
     transition: opacity .35s ease;
@@ -281,20 +284,22 @@ p {
 }
 
 .emph {
-    background: linear-gradient(transparent 62%, #fef3c7 62%);
+    /* Use flat highlight color instead of gradient */
+    background: #fef3c7;
     padding: 0 2px;
     transition: background .35s ease, color .35s ease;
     font-weight: 600;
 }
 
 .emph:hover {
-    background: linear-gradient(transparent 40%, #fde047 40%);
+    background: #fde047;
     color: var(--green);
 }
 
 /* Stats section */
 .stats {
-    background: linear-gradient(135deg, #e8f8f5 0%, #f0fdf9 100%);
+    /* Use a single light background for stats panels */
+    background: var(--light-bg);
     padding: 40px;
     margin: 40px 0;
     border-radius: 12px;
@@ -344,15 +349,18 @@ p {
 }
 
 .bar-fill.concerned {
-    background: linear-gradient(90deg, #f87171 0%, #dc2626 100%);
+    /* Flat red for concerned state */
+    background: #dc2626;
 }
 
 .bar-fill.fewer-opportunities {
-    background: linear-gradient(90deg, #fb923c 0%, #ea580c 100%);
+    /* Flat orange for fewer-opportunities */
+    background: #ea580c;
 }
 
 .bar-fill.more-jobs {
-    background: linear-gradient(90deg, var(--accent) 0%, #059669 100%);
+    /* Use the accent color for positive state */
+    background: var(--accent);
 }
 
 /* Growth chart */
@@ -383,7 +391,8 @@ p {
 
 .chart-bar {
     width: 30%;
-    background: linear-gradient(180deg, var(--accent) 0%, var(--green) 100%);
+    /* Solid accent color for chart bars */
+    background: var(--accent);
     border-radius: 8px 8px 0 0;
     position: relative;
     transition: transform 0.3s ease;
@@ -488,7 +497,8 @@ p {
 }
 
 .marker {
-    background: linear-gradient(180deg, rgba(254,241,199,0.95) 0%, rgba(254,241,199,0.95) 100%);
+    /* Use single soft marker color */
+    background: rgba(254,241,199,0.95);
     padding: 1px 6px;
     border-radius: 4px;
     transition: box-shadow 0.18s ease, transform 0.12s ease;
@@ -504,7 +514,8 @@ p {
     max-width: 980px;
     margin: 42px auto 10px;
     padding: 26px 30px 30px;
-    background: linear-gradient(135deg, var(--green) 0%, #0a524f 50%, var(--accent) 100%);
+    /* Use a single brand green for collage backgrounds */
+    background: var(--green);
     border-radius: 26px;
     color: var(--white);
     box-shadow: 0 14px 42px -18px rgba(0,0,0,0.42);
@@ -516,8 +527,8 @@ p {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 25%, rgba(255,255,255,0.12), transparent 62%),
-                radial-gradient(circle at 78% 70%, rgba(255,255,255,0.10), transparent 65%);
+    /* Replace decorative gradient overlays with a subtle single tint */
+    background: rgba(255,255,255,0.04);
     pointer-events: none;
 }
 
