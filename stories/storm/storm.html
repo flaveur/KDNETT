@@ -6,6 +6,25 @@
     <title>Ekstremværet Amy</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .person-wrapper{margin-top:0.5rem}
+        .person-wrapper article.person{display:flex;align-items:center;gap:18px;justify-content:flex-start;width:100%;box-sizing:border-box}
+        .person-wrapper article.person img.img{width:240px;height:240px;object-fit:cover;border-radius:12px}
+        .person-wrapper article.person .info{min-width:0}
+        .person-wrapper article.person .info .name{font-size:2.3rem;font-weight:700;margin:0 0 6px}
+        .person-wrapper article.person .info .age{font-size:1.9rem;color:#444;margin:0}
+        .back-btn{background:#0b5;color:#003;border:none;padding:16px 24px;border-radius:10px;cursor:pointer;font-weight:700;font-size:1.5rem;line-height:1;margin-left:12px}
+        .back-btn:active{transform:translateY(1px)}
+        .back-btn:focus{outline:2px solid rgba(0,0,0,0.12);outline-offset:2px}
+        
+        @media (max-width:700px){
+            .person-wrapper article.person{flex-direction:row;align-items:center;gap:12px}
+            .person-wrapper article.person img.img{width:192px;height:192px}
+            .person-wrapper article.person .info .name{font-size:2.05rem}
+            .person-wrapper article.person .info .age{font-size:1.6rem}
+            .back-btn{padding:12px 18px;font-size:1.25rem;margin-left:8px;margin-top:0}
+        }
+    </style>
 </head>
 <body>
 
@@ -75,13 +94,16 @@
                     Da jeg kom tilbake fra Nord-Norge så jeg at Naboen min hadde mista en del av taket.
                 </p>
             </article>
-            <article class="person">
-                <img src="images/aleksander.jpg" alt="Aleksander Andersrød" class="img">
-                <div class="info">
-                    <p class="name">Aleksander Andersrød</p>
-                    <p class="age">22 år</p>
-                </div>
-            </article>
+            <div class="person-wrapper">
+                <article class="person">
+                    <img src="images/aleksander.jpg" alt="Aleksander Andersrød" class="img">
+                    <div class="info">
+                        <p class="name">Aleksander Andersrød</p>
+                        <p class="age">22 år</p>
+                    </div>
+                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -99,13 +121,16 @@
                     Dagen etterpå var det en del hagemøbler og rusk rundt i gatene, men det ble ryddet opp i fort.
                 </p>
             </article>
-            <article class="person">
-                <img src="images/emils.jpg" alt="Emil Skatt" class="img">
-                <div class="info">
-                    <p class="name">Emil Skatt</p>
-                    <p class="age">22 år</p>
-                </div>
-            </article>
+            <div class="person-wrapper">
+                <article class="person">
+                    <img src="images/emils.jpg" alt="Emil Skatt" class="img">
+                    <div class="info">
+                        <p class="name">Emil Skatt</p>
+                        <p class="age">22 år</p>
+                    </div>
+                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -123,13 +148,16 @@
                     klar over, mesteparten av skadene jeg fikk med meg i byen leste jeg om i SA (Sarpsborg Arbeiderblad), men det var ikke noe alvorlig.
                 </p>
             </article>
-            <article class="person">
-                <img src="images/jimmy.jpg" alt="Jimmy Bui" class="img">
-                <div class="info">
-                    <p class="name">Jimmy Bui</p>
-                    <p class="age">23 år</p>
-                </div>
-            </article>
+            <div class="person-wrapper">
+                <article class="person">
+                    <img src="images/jimmy.jpg" alt="Jimmy Bui" class="img">
+                    <div class="info">
+                        <p class="name">Jimmy Bui</p>
+                        <p class="age">23 år</p>
+                    </div>
+                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -146,13 +174,16 @@
                     Jeg ble inne hele dagen, ettersom det var anbefalt.
                 </p>
             </article>
-            <article class="person">
-                <img src="images/emilw.jpg" alt="Emil Woie" class="img">
-                <div class="info">
-                    <p class="name">Emil Woie</p>
-                    <p class="age">22 år</p>
-                </div>
-            </article>
+            <div class="person-wrapper">
+                <article class="person">
+                    <img src="images/emilw.jpg" alt="Emil Woie" class="img">
+                    <div class="info">
+                        <p class="name">Emil Woie</p>
+                        <p class="age">22 år</p>
+                    </div>
+                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -172,13 +203,16 @@
                     Jeg fikk også et fare-varsel på mobil da vi forlot Røros.
                 </p>
             </article>
-            <article class="person">
-                <img src="images/syver.jpg" alt="Syver Eriksen" class="img">
-                <div class="info">
-                    <p class="name">Syver Eriksen</p>
-                    <p class="age">22 år</p>
-                </div>
-            </article>
+            <div class="person-wrapper">
+                <article class="person">
+                    <img src="images/syver.jpg" alt="Syver Eriksen" class="img">
+                    <div class="info">
+                        <p class="name">Syver Eriksen</p>
+                        <p class="age">22 år</p>
+                    </div>
+                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -189,7 +223,7 @@
                 <video class="del1img" controls autoplay muted loop>
                     <source src="images/tretrondelagoppdal.mp4" type="video/mp4">
                 </video>
-                <p>Trær i veien var en stor plage for mange i Trondheim.</p>
+                <p>Trær i veien var en stor plage. Opptaket viser noen av utfordringene i Oppdal.</p>
                 <img src="images/tretrondelag.avif" alt="Tre i Trøndelag" class="del1img">
                 <a class="source" href="https://www.nrk.no/trondelag/ekstremvaeret-_amy_-herjer-i-trondelag._-1.17597658">NRK</a>
                 <p>Vi har snakket med Aidan, som studerer ved NTNU i Tondheim for å få innsikt i konsekvensene av stormen.</p>
@@ -198,13 +232,16 @@
                     ellers så merket ikke jeg noe særlig til stormen. Jeg så det meste av skadene på nyhetene etterpå.
                 </p>
             </article>
-            <article class="person">
-                <img src="images/aidan.jpg" alt="Aidan Kostveit" class="img">
-                <div class="info">
-                    <p class="name">Aidan Janos Kostveit Gabriel</p>
-                    <p class="age">23 år</p>
-                </div>
-            </article>
+            <div class="person-wrapper">
+                <article class="person">
+                    <img src="images/aidan.jpg" alt="Aidan Kostveit" class="img">
+                    <div class="info">
+                        <p class="name">Aidan Janos Kostveit Gabriel</p>
+                        <p class="age">23 år</p>
+                    </div>
+                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -224,5 +261,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Smooth scroll back to navigation overview for .back-btn
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('.back-btn').forEach(function(btn){
+                btn.addEventListener('click', function(e){
+                    var tgt = document.getElementById(btn.dataset.target);
+                    if(tgt){ tgt.scrollIntoView({behavior:'smooth',block:'start'}); }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
