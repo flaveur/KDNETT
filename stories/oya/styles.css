@@ -46,54 +46,6 @@ body {
   transition: opacity .25s ease;
 }
 
-/* ========== BACK TO HOME BUTTON ========== */
-.back-to-home {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--green);
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.back-to-home:hover {
-  background: rgba(255, 255, 255, 1);
-  transform: translateX(-5px);
-  box-shadow: 0 6px 20px rgba(10, 61, 59, 0.25);
-}
-
-.back-to-home svg {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
-}
-
-.back-to-home:hover svg {
-  transform: translateX(-3px);
-}
-
-.dark-mode .back-to-home {
-  background: rgba(10, 61, 59, 0.95);
-  color: #a7e1d4;
-  border: 1px solid #0ec9a6;
-}
-
-.dark-mode .back-to-home:hover {
-  background: rgba(10, 61, 59, 1);
-  border-color: #a7e1d4;
-}
-
 /* ========== HERO SECTION WITH FLAG ========== */
 .hero-section {
   min-height: 100vh;
@@ -386,240 +338,7 @@ p, h2, blockquote, figure {
 }
 
 
-.timeline-section {
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 1px solid #eee;
-}
-
-.timeline {
-  display: flex;
-  justify-content: space-between;
-  overflow-x: auto;
-  padding: 40px 20px 20px;
-  gap: 20px;
-  scrollbar-width: none;
-  position: relative;
-}
-
-/* Enable smooth snap scrolling and align items to center */
-.timeline {
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.timeline-item {
-  scroll-snap-align: center;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 52px;
-  left: 20px;
-  right: 20px;
-  height: 3px;
-  /* Escalation: green to muted red across the timeline */
-  background: linear-gradient(to right, var(--green) 0%, #d48a8a 60%, #8b1a1a 100%);
-  z-index: 0;
-}
-
-.timeline::-webkit-scrollbar {
-  display: none;
-}
-
-.timeline-item {
-  text-align: center;
-  cursor: pointer;
-  flex: 1;
-  min-width: 160px;
-  transition: transform 0.2s ease;
-  position: relative;
-  z-index: 1;
-}
-
-/* Optional: show simple icons via data-attribute without HTML changes */
-.timeline-item[data-icon]::before {
-  content: attr(data-icon);
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 12px;
-  color: var(--dark-gray);
-}
-
-.timeline-item:hover {
-  transform: translateY(-4px);
-}
-
-.timeline-dot {
-  display: block;
-  margin: 0 auto 8px;
-  width: 16px;
-  height: 16px;
-  background: var(--white);
-  border: 3px solid var(--gray);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.timeline-item.active .timeline-dot {
-  background: var(--green);
-  border-color: var(--green);
-  width: 20px;
-  height: 20px;
-  box-shadow: 0 0 0 4px rgba(10, 61, 59, 0.2);
-}
-
-.timeline-item p {
-  font-size: 16px;
-  color: var(--dark-gray);
-  opacity: 1;
-  transform: none;
-}
-
-.timeline-item.active p {
-  color: var(--green);
-  font-weight: 600;
-}
-
-/* Enhanced interactive timeline styles */
-.timeline-controls {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  gap: 8px;
-  z-index: 5;
-}
-
-.timeline-control-btn {
-  background: rgba(255,255,255,0.95);
-  border: 1px solid rgba(0,0,0,0.06);
-  color: var(--green);
-  padding: 8px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.timeline-control-btn:active { transform: scale(0.98); }
-
-.timeline-item { transition: transform 0.25s cubic-bezier(.2,.9,.3,1), opacity 0.25s; }
-.timeline-item:hover { transform: translateY(-6px) scale(1.03); z-index: 3; }
-.timeline-item:focus { outline: 3px solid rgba(10,61,59,0.08); transform: translateY(-6px) scale(1.03); }
-
-.timeline-item.centered { transform: scale(1.08) translateY(-8px); }
-
-/* Pulse animation for the active dot */
-.timeline-item.centered .timeline-dot,
-.timeline-item.active .timeline-dot {
-  animation: pulse-dot 1.6s infinite cubic-bezier(.2,.9,.3,1);
-}
-
-@keyframes pulse-dot {
-  0% { box-shadow: 0 0 0 0 rgba(10, 61, 59, 0.18); }
-  50% { box-shadow: 0 0 0 8px rgba(10, 61, 59, 0.06); }
-  100% { box-shadow: 0 0 0 0 rgba(10, 61, 59, 0.0); }
-}
-
-/* Hover preview tooltip */
-.timeline-tooltip {
-  position: fixed;
-  max-width: 360px;
-  background: var(--white);
-  color: #111;
-  padding: 12px 14px;
-  border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-  pointer-events: none;
-  z-index: 20000;
-  transform-origin: top left;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  opacity: 0;
-  transform: translateY(-6px) scale(0.98);
-}
-
-.timeline-tooltip.visible { opacity: 1; transform: translateY(0) scale(1); }
-
-/* Reduce motion support: remove non-essential animations */
-@media (prefers-reduced-motion: reduce) {
-  .timeline-item,
-  .timeline-item:hover,
-  .timeline-item.centered,
-  .timeline-dot,
-  .timeline-tooltip,
-  .reading-progress,
-  .info-box,
-  .info-box-content {
-    transition: none !important;
-    animation: none !important;
-  }
-  .timeline { scroll-snap-type: none; }
-}
-
-/* Class-based disable for effects (developer can add `no-effects` to body) */
-.no-effects .timeline { scroll-snap-type: none; }
-.no-effects .timeline-item,
-.no-effects .timeline-dot,
-.no-effects .timeline-tooltip,
-.no-effects .info-box { transition: none !important; animation: none !important; }
-
-/* Optional overlay detail (re-usable) */
-.timeline-overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.5);
-  z-index: 30000;
-}
-
-.timeline-overlay .panel {
-  background: var(--white);
-  max-width: 900px;
-  width: calc(100% - 48px);
-  max-height: 80vh;
-  overflow: auto;
-  border-radius: 10px;
-  padding: 24px;
-}
-
-.dark-mode .timeline::before {
-  background: linear-gradient(to right, #b5d6d3 0%, #a7e1d4 50%, #b5d6d3 100%);
-}
-
-.dark-mode .timeline-dot {
-  background: #0d504d;
-  border-color: #b5d6d3;
-}
-
-.dark-mode .timeline-item.active .timeline-dot {
-  background: #a7e1d4;
-  border-color: #a7e1d4;
-  box-shadow: 0 0 0 4px rgba(167, 225, 212, 0.2);
-}
-
-
 /* ========== LITTERÆRE VIRKEMIDLER ========== */
-
-/* Reading Progress Bar */
-.reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background: linear-gradient(to right, var(--green), #0ec9a6);
-  z-index: 9999;
-  transition: width 0.1s ease;
-  box-shadow: 0 2px 4px rgba(10, 61, 59, 0.3);
-}
 
 /* Highlighted Keywords */
 .highlight-word {
@@ -845,28 +564,6 @@ article h2:hover::before {
 
 /* ========== MOBILE RESPONSIVENESS ========== */
 @media (max-width: 768px) {
-  /* Back to Home Button */
-  .back-to-home {
-    top: 15px;
-    left: 15px;
-    padding: 10px 16px;
-    font-size: 13px;
-    border-radius: 30px;
-  }
-  
-  .back-to-home svg {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .back-to-home span {
-    display: none;
-  }
-  
-  .back-to-home::after {
-    content: 'Hjem';
-  }
-  
   /* Hero Section */
   .hero-section {
     min-height: 100vh;
@@ -982,38 +679,6 @@ article h2:hover::before {
     transform: none;
   }
   
-  /* Timeline */
-  .timeline {
-    padding: 30px 10px 15px;
-    gap: 15px;
-  }
-  
-  .timeline::before {
-    top: 42px;
-    left: 10px;
-    right: 10px;
-    height: 2px;
-  }
-  
-  .timeline-item {
-    min-width: 140px;
-  }
-  
-  .timeline-item p {
-    font-size: 12px;
-  }
-  
-  .timeline-dot {
-    width: 14px;
-    height: 14px;
-    border-width: 2px;
-  }
-  
-  .timeline-item.active .timeline-dot {
-    width: 18px;
-    height: 18px;
-  }
-  
   /* Instagram embeds */
   .instagram-media {
     min-width: 100% !important;
@@ -1027,11 +692,6 @@ article h2:hover::before {
     width: 100%;
   }
   
-  /* Progress bar */
-  .reading-progress {
-    height: 3px;
-  }
-  
   /* Footer */
   footer {
     margin-top: 20px;
@@ -1042,18 +702,6 @@ article h2:hover::before {
 
 /* Extra small phones */
 @media (max-width: 480px) {
-  .back-to-home {
-    top: 10px;
-    left: 10px;
-    padding: 8px 14px;
-    font-size: 12px;
-  }
-  
-  .back-to-home svg {
-    width: 16px;
-    height: 16px;
-  }
-  
   .palestine-flag {
     width: 200px;
     height: 133px;
@@ -1094,14 +742,6 @@ article h2:hover::before {
     padding: 12px;
   }
   
-  .timeline-item {
-    min-width: 120px;
-  }
-  
-  .timeline-item p {
-    font-size: 11px;
-  }
-  
   .info-box-content {
     font-size: 13px;
   }
@@ -1134,13 +774,9 @@ article h2:hover::before {
     margin: 0 0 15px 25px;
     font-size: 17px;
   }
-  
-  .timeline-item {
-    min-width: 150px;
-  }
 }
 
-/* Closing Gaza section */
+
 .gaza-end {
   position: relative;
   margin-top: 48px;
