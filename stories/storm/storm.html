@@ -10,19 +10,21 @@
         .person-wrapper{margin-top:0.5rem}
         .person-wrapper article.person{display:flex;align-items:center;gap:18px;justify-content:flex-start;width:100%;box-sizing:border-box}
         .person-wrapper article.person img.img{width:240px;height:240px;object-fit:cover;border-radius:12px}
-        .person-wrapper article.person .info{min-width:0}
-        .person-wrapper article.person .info .name{font-size:2.3rem;font-weight:700;margin:0 0 6px}
-        .person-wrapper article.person .info .age{font-size:1.9rem;color:#444;margin:0}
-        .back-btn{background:#0b5;color:#003;border:none;padding:16px 24px;border-radius:10px;cursor:pointer;font-weight:700;font-size:1.5rem;line-height:1;margin-left:12px}
-        .back-btn:active{transform:translateY(1px)}
-        .back-btn:focus{outline:2px solid rgba(0,0,0,0.12);outline-offset:2px}
+        .person-wrapper article.person .info{min-width:0;height:240px;display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1;padding:1rem 1.5rem;gap:0.6rem;text-align:center}
+        .person-wrapper article.person .info .name{font-size:2.3rem;font-weight:700;margin:0}
+        .person-wrapper article.person .info .age{font-size:1.9rem;color:#fff;margin:0;font-weight:800}
+        /* reuse site navigation button look */
+        .back-btn.city-btn{padding:1rem 1.5rem;border-radius:12px;font-size:1.1rem}
+        .back-btn.city-btn:active{transform:translateY(-1px)}
+        .back-btn.city-btn:focus{outline:2px solid rgba(0,0,0,0.12);outline-offset:2px}
 
         @media (max-width:700px){
             .person-wrapper article.person{flex-direction:row;align-items:center;gap:12px}
             .person-wrapper article.person img.img{width:192px;height:192px}
+            .person-wrapper article.person .info{height:192px;display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1;padding:0.75rem 1rem;gap:0.45rem;text-align:center}
             .person-wrapper article.person .info .name{font-size:2.05rem}
             .person-wrapper article.person .info .age{font-size:1.6rem}
-            .back-btn{padding:12px 18px;font-size:1.25rem;margin-left:8px;margin-top:0}
+            .back-btn.city-btn{padding:0.75rem 1.25rem;font-size:1rem;margin-left:8px;margin-top:0}
         }
     </style>
 </head>
@@ -100,7 +102,7 @@
                         <p class="name">Aleksander Andersrød</p>
                         <p class="age">22 år</p>
                     </div>
-                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                    <button class="back-btn city-btn" data-target="section-overview">Til navigering</button>
                 </article>
             </div>
         </div>
@@ -127,7 +129,7 @@
                         <p class="name">Emil Skatt</p>
                         <p class="age">22 år</p>
                     </div>
-                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                    <button class="back-btn city-btn" data-target="section-overview">Til navigering</button>
                 </article>
             </div>
         </div>
@@ -154,7 +156,7 @@
                         <p class="name">Jimmy Bui</p>
                         <p class="age">23 år</p>
                     </div>
-                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                    <button class="back-btn city-btn" data-target="section-overview">Til navigering</button>
                 </article>
             </div>
         </div>
@@ -180,7 +182,7 @@
                         <p class="name">Emil Woie</p>
                         <p class="age">22 år</p>
                     </div>
-                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                    <button class="back-btn city-btn" data-target="section-overview">Til navigering</button>
                 </article>
             </div>
         </div>
@@ -209,7 +211,7 @@
                         <p class="name">Syver Eriksen</p>
                         <p class="age">22 år</p>
                     </div>
-                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                    <button class="back-btn city-btn" data-target="section-overview">Til navigering</button>
                 </article>
             </div>
         </div>
@@ -238,7 +240,7 @@
                         <p class="name">Aidan Janos Kostveit Gabriel</p>
                         <p class="age">23 år</p>
                     </div>
-                    <button class="back-btn" data-target="section-overview">Til navigering</button>
+                    <button class="back-btn city-btn" data-target="section-overview">Til navigering</button>
                 </article>
             </div>
         </div>
