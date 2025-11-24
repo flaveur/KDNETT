@@ -159,3 +159,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Conclusion phone straightening functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const straightenBtn = document.getElementById('straighten-phone-btn');
+    const conclusionPhone = document.getElementById('conclusion-phone');
+    const phoneInstruction = document.querySelector('.phone-instruction');
+    
+    if (straightenBtn && conclusionPhone) {
+        straightenBtn.addEventListener('click', () => {
+            conclusionPhone.classList.remove('birds-eye');
+            conclusionPhone.classList.add('straightened');
+            
+            // Hide instruction text after click
+            if (phoneInstruction) {
+                phoneInstruction.style.opacity = '0';
+                phoneInstruction.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    phoneInstruction.style.display = 'none';
+                }, 500);
+            }
+        });
+    }
+});
