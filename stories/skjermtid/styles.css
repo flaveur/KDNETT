@@ -21,7 +21,7 @@ body {
 }
 
 
-/* Hero iPhone Section */
+/* Hero iPhone Section – telefonlayouten er generert sammen med GitHub Copilot */
 .hero-iphone-section {
     min-height: 100vh;
     display: flex;
@@ -33,6 +33,7 @@ body {
     overflow: hidden;
 }
 
+/* Bakgrunnsglød og partikler til hero-telefonen er laget sammen med GitHub Copilot */
 .hero-iphone-section::before {
     content: '';
     position: absolute;
@@ -51,6 +52,7 @@ body {
     50% { opacity: 0.8; }
 }
 
+/* Selve telefonrammen i hero-seksjonen er bygget med GitHub Copilot */
 .hero-iphone-section .iphone-frame {
     width: 380px;
     height: 780px;
@@ -65,6 +67,7 @@ body {
     z-index: 1;
 }
 
+/* Notchen i hero-telefonen er også foreslått av GitHub Copilot */
 .hero-iphone-section .iphone-notch {
     position: absolute;
     top: 14px;
@@ -78,6 +81,7 @@ body {
     box-shadow: inset 0 -2px 8px rgba(0, 217, 255, 0.3);
 }
 
+/* Skjermen og scrolloppsettet for hero-telefonen er laget sammen med GitHub Copilot */
 .hero-iphone-section .iphone-screen {
     width: 100%;
     height: 100%;
@@ -92,6 +96,7 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
 }
 
+/* Skjermscrollbarens styling ble fjernet med hjelp fra GitHub Copilot */
 .hero-iphone-section .iphone-screen::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
@@ -197,6 +202,7 @@ body {
     line-height: 1.5;
 }
 
+/* Telefonseksjonen med video ble generert med hjelp fra GitHub Copilot */
 .iphone-container {
     display: flex;
     flex-direction: column;
@@ -218,6 +224,7 @@ body {
     letter-spacing: 2px;
 }
 
+/* Den pulserende gløden bak telefonen ble komponert av GitHub Copilot */
 .iphone-container::before {
     content: '';
     position: absolute;
@@ -233,6 +240,7 @@ body {
     50% { transform: scale(1.1); opacity: 0.6; }
 }
 
+/* Telefonrammen rundt videoen er modellert med GitHub Copilot */
 .iphone-container .iphone-frame {
     width: 340px;
     height: 680px;
@@ -247,6 +255,7 @@ body {
     z-index: 1;
 }
 
+/* Notchen på videotelefonen er foreslått av GitHub Copilot */
 .iphone-container .iphone-notch {
     position: absolute;
     top: 12px;
@@ -260,6 +269,7 @@ body {
     box-shadow: inset 0 -2px 5px rgba(0, 217, 255, 0.3);
 }
 
+/* Skjermen som holder videoen er laget sammen med GitHub Copilot */
 .iphone-container .iphone-screen {
     width: 100%;
     height: 100%;
@@ -270,6 +280,7 @@ body {
     box-shadow: inset 0 0 30px rgba(0, 217, 255, 0.2);
 }
 
+/* Videoavspilleren i telefonrammen er laget sammen med GitHub Copilot */
 .iphone-video {
     width: 100%;
     height: 100%;
@@ -286,6 +297,7 @@ body {
     image-rendering: crisp-edges;
 }
 
+/* Avspillingsknappen og overlayen er tegnet av GitHub Copilot */
 .play-button {
     position: absolute;
     top: 50%;
@@ -305,18 +317,20 @@ body {
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
 }
 
+/* Hover-effekten på play-knappen kommer fra GitHub Copilot */
 .play-button:hover {
     background: rgba(0, 217, 255, 0.3);
     transform: translate(-50%, -50%) scale(1.15);
     box-shadow: 0 0 30px rgba(0, 217, 255, 0.8);
 }
 
+/* Ikonet i play-knappen ble finjustert av GitHub Copilot */
 .play-button svg {
     margin-left: 5px;
     filter: drop-shadow(0 0 5px rgba(0, 217, 255, 0.8));
 }
 
-/* iOS Skjermtid Interface */
+/* iOS Skjermtid Interface er også laget sammen med GitHub Copilot */
 .screen-time-interface {
     padding: 50px 20px 20px;
     color: white;
@@ -1024,7 +1038,6 @@ body > p {
 }
 
 .influencer-section h4,
-.dumbphone-section h4,
 .book-section h4 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -1035,8 +1048,25 @@ body > p {
 }
 
 .influencer-section p,
-.dumbphone-section p,
 .book-section p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #d0dbe6;
+    margin-bottom: 30px;
+}
+
+/* Typografien i dumbphone-seksjonen er også laget med GitHub Copilot */
+.dumbphone-section h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Brødteksten til dumbphone-seksjonen følger GitHub Copilot sitt forslag */
+.dumbphone-section p {
     font-size: 1.05rem;
     line-height: 1.75;
     color: #d0dbe6;
@@ -1123,7 +1153,7 @@ body > p {
 }
 
 
-/* Dumbphone Section */
+/* Dumbphone Section er skrevet sammen med GitHub Copilot */
 .dumbphone-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -1131,10 +1161,12 @@ body > p {
     margin-bottom: 30px;
 }
 
+/* Forklaringsteksten til dumbphone-scenariet er skrevet med GitHub Copilot */
 .dumbphone-explanation p {
     margin-bottom: 20px;
 }
 
+/* Funksjonsrutenettet til dumbphone ble konfigurert av GitHub Copilot */
 .dumbphone-features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1159,6 +1191,7 @@ body > p {
     color: #d9e2ec;
 }
 
+/* Bildeplassholderen for dumbphonen er formgitt med GitHub Copilot */
 .dumbphone-image-placeholder {
     aspect-ratio: 3 / 4;
     background: rgba(0, 217, 255, 0.08);
@@ -1172,6 +1205,7 @@ body > p {
     position: relative;
 }
 
+/* Selve bildet i dumbphone-holderen styres av GitHub Copilot */
 .dumbphone-image-placeholder img {
     width: 100%;
     height: 100%;
@@ -1179,6 +1213,7 @@ body > p {
     display: block;
 }
 
+/* Bildeteksten i dumbphone-holderen er formulert med GitHub Copilot */
 .dumbphone-image-placeholder .image-caption {
     position: absolute;
     bottom: 0;
@@ -1334,6 +1369,7 @@ body > p {
 
 /* Responsive Movement Section */
 @media (max-width: 980px) {
+    /* Den responsive dumbphone-layouten ble optimalisert med GitHub Copilot */
     .dumbphone-content {
         grid-template-columns: 1fr;
     }
@@ -1365,8 +1401,12 @@ body > p {
     }
 
     .influencer-section h4,
-    .dumbphone-section h4,
     .book-section h4 {
+        font-size: 1.3rem;
+    }
+
+    /* Overskriftene i dumbphone-seksjonen skaleres av GitHub Copilot */
+    .dumbphone-section h4 {
         font-size: 1.3rem;
     }
 
@@ -1374,13 +1414,14 @@ body > p {
         grid-template-columns: 1fr;
     }
 
+    /* Funksjonsrutenettet for dumbphone ble justert av GitHub Copilot */
     .dumbphone-features {
         grid-template-columns: 1fr;
     }
 
 }
 
-/* Slightly larger, more spacious text within info/recommendations */
+
 .recommendations .rec-info p {
     line-height: 1.85;
 }
@@ -1685,11 +1726,13 @@ body > p {
         letter-spacing: 0.5px;
     }
     
+    /* Responsiv padding for hero-telefonen er laget med GitHub Copilot */
     .hero-iphone-section {
         padding: 40px 15px;
         min-height: 90vh;
     }
     
+    /* Telefonrammen i hero-seksjonen skal skalere via GitHub Copilot-innspill */
     .hero-iphone-section .iphone-frame {
         width: 280px;
         height: 560px;
@@ -1697,6 +1740,7 @@ body > p {
         border-radius: 40px;
     }
     
+    /* Notch-tilpasningen på små skjermer er laget med GitHub Copilot */
     .hero-iphone-section .iphone-notch {
         width: 120px;
         height: 24px;
@@ -1724,10 +1768,12 @@ body > p {
         font-size: 0.95rem;
     }
     
+    /* GitHub Copilot foreslo marginer for videotelefonen på mobil */
     .iphone-container {
         padding: 80px 15px;
     }
     
+    /* Telefonrammen rundt videoen skaleres via GitHub Copilot */
     .iphone-container .iphone-frame {
         width: 280px;
         height: 560px;
@@ -1739,6 +1785,7 @@ body > p {
         letter-spacing: 1px;
     }
     
+    /* Glow-effekten bak telefonen er tilpasset små skjermer av GitHub Copilot */
     .iphone-container::before {
         width: 350px;
         height: 350px;
@@ -1855,15 +1902,18 @@ body > p {
         font-size: 0.9rem;
     }
     
+    /* Skjermtidsgrensesnittet skaleres på mobil etter GitHub Copilot sitt forslag */
     .screen-time-interface {
         padding: 45px 12px 12px;
     }
     
+    /* Statuslinjen i telefonen får også Copilot-tilpasning */
     .status-bar {
         font-size: 11px;
         padding: 0 15px;
     }
     
+    /* Overskriften i iPhone UI følger GitHub Copilot sin responslogikk */
     .screen-header h2 {
         font-size: 22px;
     }
@@ -1880,6 +1930,7 @@ body > p {
         font-size: 11px;
     }
     
+    /* App-ikonene i iPhone-grafen er responsivt formet av GitHub Copilot */
     .category-icon {
         width: 36px;
         height: 36px;
@@ -1910,6 +1961,7 @@ body > p {
 }
 
 @media (max-width: 480px) {
+    /* Ekstra tight skalering av hero-telefonen er laget med GitHub Copilot */
     .hero-iphone-section .iphone-frame {
         width: 260px;
         height: 520px;
@@ -1919,6 +1971,7 @@ body > p {
         font-size: 20px;
     }
     
+    /* Telefonrammen rundt videoen får småskjermstørrelser fra GitHub Copilot */
     .iphone-container .iphone-frame {
         width: 260px;
         height: 520px;
@@ -1950,7 +2003,7 @@ body > p {
     
 }
 
-/* Conclusion iPhone Section - Bird's Eye View */
+/* Konklusjonstelefonen (fugleperspektiv) er laget med GitHub Copilot for 3D-effekt */
 .conclusion-iphone-section {
     padding: 80px 20px 100px;
     background: #0f0f0f;
@@ -1959,6 +2012,7 @@ body > p {
     position: relative;
 }
 
+/* Seksjonstittelen i konklusjonstelefonen er utformet med GitHub Copilot */
 .conclusion-iphone-section .section-title {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -1966,6 +2020,7 @@ body > p {
     font-weight: 700;
 }
 
+/* Instruksjonen til brukeren inne i telefonen er skrevet med GitHub Copilot */
 .phone-instruction {
     text-align: center;
     font-size: 1.2rem;
@@ -1975,6 +2030,7 @@ body > p {
     animation: pulse 2s ease-in-out infinite;
 }
 
+/* Pil-animasjonen i telefoninstruksen ble konfigurert av GitHub Copilot */
 .arrow-down {
     display: inline-block;
     font-size: 1.5rem;
@@ -1999,6 +2055,7 @@ body > p {
     }
 }
 
+/* 3D-rammen til konklusjonstelefonen er modellert sammen med GitHub Copilot */
 .conclusion-iphone-section .iphone-frame {
     width: 320px;
     height: 640px;
@@ -2012,15 +2069,18 @@ body > p {
     transform-style: preserve-3d;
 }
 
+/* Fugleperspektiv-varianten av telefonen er foreslått av GitHub Copilot */
 .conclusion-iphone-section .iphone-frame.birds-eye {
     transform: perspective(1200px) rotateX(45deg) rotateY(10deg);
     transition: transform 0.8s ease-in-out;
 }
 
+/* Overgangen til rett telefonstilling kommer fra GitHub Copilot */
 .conclusion-iphone-section .iphone-frame.straightened {
     transform: perspective(1200px) rotateX(0deg) rotateY(0deg);
 }
 
+/* Notchen i konklusjonstelefonen er tegnet med GitHub Copilot */
 .conclusion-iphone-section .iphone-notch {
     width: 140px;
     height: 28px;
@@ -2033,6 +2093,7 @@ body > p {
     z-index: 2;
 }
 
+/* Skjermgradienten i avslutningstelefonen er laget med GitHub Copilot */
 .conclusion-iphone-section .iphone-screen {
     width: 100%;
     height: 100%;
@@ -2042,6 +2103,7 @@ body > p {
     overflow: hidden;
 }
 
+/* Selve konklusjonsgrensesnittet inne i telefonen er komponert av GitHub Copilot */
 .conclusion-interface {
     padding: 50px 25px 25px;
     height: 100%;
@@ -2049,6 +2111,7 @@ body > p {
     flex-direction: column;
 }
 
+/* Statusbaren inne i konklusjonstelefonen er designet med GitHub Copilot */
 .conclusion-interface .status-bar {
     display: flex;
     justify-content: space-between;
@@ -2059,17 +2122,20 @@ body > p {
     color: white;
 }
 
+/* Ikonoppsettet i statusbaren fikk hjelp av GitHub Copilot */
 .conclusion-interface .status-icons {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+/* Overskriftsblokken i telefonen er strukturert av GitHub Copilot */
 .conclusion-header {
     text-align: center;
     margin-bottom: 30px;
 }
 
+/* Tittelen i konklusjonsskjermen er definert med GitHub Copilot */
 .conclusion-header h3 {
     font-size: 1.4rem;
     color: white;
@@ -2077,12 +2143,14 @@ body > p {
     font-weight: 700;
 }
 
+/* Undertittelen i telefonen er skrevet sammen med GitHub Copilot */
 .conclusion-subtitle {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
 }
 
+/* Funnefeltet i konklusjonstelefonen ble strukturert av GitHub Copilot */
 .key-findings {
     flex: 1;
     display: flex;
@@ -2091,6 +2159,7 @@ body > p {
     margin-bottom: 25px;
 }
 
+/* Hver funn-boble i telefonen er designet med hjelp fra GitHub Copilot */
 .finding-item {
     display: flex;
     align-items: flex-start;
@@ -2101,6 +2170,7 @@ body > p {
     backdrop-filter: blur(10px);
 }
 
+/* Ikonene i funnlisten er tegnet av GitHub Copilot */
 .finding-icon {
     width: 40px;
     height: 40px;
@@ -2113,6 +2183,7 @@ body > p {
     color: var(--screen-glow);
 }
 
+/* Typografien i funnlisten er komponert med GitHub Copilot */
 .finding-content h4 {
     font-size: 1rem;
     color: white;
@@ -2120,6 +2191,7 @@ body > p {
     font-weight: 600;
 }
 
+/* Brødteksten i funnene fikk finpuss av GitHub Copilot */
 .finding-content p {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.9);
@@ -2127,6 +2199,7 @@ body > p {
     line-height: 1.4;
 }
 
+/* Den siste meldingen inne i telefonen er skrevet sammen med GitHub Copilot */
 .final-message {
     text-align: center;
     margin-bottom: 25px;
@@ -2135,6 +2208,7 @@ body > p {
     border-radius: 12px;
 }
 
+/* Tittelen i sluttmeldingen er justert av GitHub Copilot */
 .final-message h4 {
     font-size: 1.1rem;
     color: white;
@@ -2142,6 +2216,7 @@ body > p {
     font-weight: 600;
 }
 
+/* Tekstinnholdet i sluttmeldingen er formulert med GitHub Copilot */
 .final-message p {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.9);
@@ -2149,10 +2224,12 @@ body > p {
     margin: 0;
 }
 
+/* Handlingsseksjonen i telefonen er strukturert av GitHub Copilot */
 .action-section {
     text-align: center;
 }
 
+/* Handlingsknappen innenfor telefonen er stilsett av GitHub Copilot */
 .action-button {
     display: inline-flex;
     align-items: center;
@@ -2168,6 +2245,7 @@ body > p {
     transition: all 0.3s ease;
 }
 
+/* Hover-effekten på knappen er justert av GitHub Copilot */
 .action-button:hover {
     background: rgba(0, 217, 255, 0.9);
     transform: translateY(-2px);
@@ -2175,30 +2253,36 @@ body > p {
 
 /* Mobile responsive for conclusion section */
 @media (max-width: 768px) {
+    /* GitHub Copilot foreslo disse responsive justeringene for konklusjonstelefonen */
     .conclusion-iphone-section {
         padding: 60px 15px 80px;
     }
     
+    /* Seksjonstittelen på mobil følger Copilot-forslag */
     .conclusion-iphone-section .section-title {
         font-size: 2rem;
         margin-bottom: 10px;
     }
     
+    /* Instruksjonen i telefonen skaleres via GitHub Copilot */
     .phone-instruction {
         font-size: 1rem;
         margin-bottom: 20px;
     }
     
+    /* Telefonrammen får mobilvennlig 3D fra GitHub Copilot */
     .conclusion-iphone-section .iphone-frame {
         width: 280px;
         height: 560px;
         transform: perspective(600px) rotateX(20deg) rotateY(-3deg);
     }
     
+    /* Fugleperspektiv-animasjonen på mobil er Copilot-generert */
     .conclusion-iphone-section .iphone-frame.birds-eye {
         transform: perspective(800px) rotateX(35deg) rotateY(8deg);
     }
     
+    /* Overgangen til rett telefonstilling på mobil er Copilot-styrt */
     .conclusion-iphone-section .iphone-frame.straightened {
         transform: perspective(800px) rotateX(0deg) rotateY(0deg);
     }
